@@ -270,6 +270,16 @@ class DQNAgent:
 
             action = self.select_action()
             reward, done, next_state = self.env.step(action)
+
+            # Reward shaping theo DELTA feature (potential-based shaping):
+            # phạt/thưởng phần THAY ĐỔI của holes/bumpiness/height sau nước đi,
+            # KHÔNG phạt giá trị tuyệt đối (phạt tuyệt đối làm reward luôn âm
+            # và lệch policy — chính là bug của bản cũ). Đặt ở train.py để
+            # reward gốc của env và score khi test giữ nguyên ý nghĩa.
+            # features: (lines, holes, bumpiness, height)
+            reward -= self.args.shape_holes * (next_state[1] - state[1])
+            reward -= self.args.shape_bump * (next_state[2] - state[2])
+            reward -= self.args.shape_height * (next_state[3] - state[3])
             total_reward += reward
 
             # Render nếu enabled
@@ -284,16 +294,9 @@ class DQNAgent:
             # Update state cho vòng lặp tiếp theo
             state = next_state
 
-        # Train 1 LẦN mỗi episode (giống reference), không phải mỗi khối.
-        # Train mỗi khối = ~40-100 updates/ván → policy xoay liên tục,
-        # loss tăng dần và score dao động mạnh không ổn định được.
-        # Warm-up: chờ đủ 3000 samples (cap ở 3000 để buffer to 100k
-        # không làm training bắt đầu trễ cả trăm episodes).
-        if len(self.memory) > min(3000, self.args.memory_size / 10):
-            loss = self.train_step()
-            self.total_loss += loss
-            self.loss_count += 1
-
+        # LƯU Ý: play_episode chỉ CHƠI, không train. Gradient update nằm ở
+        # train() và chạy SAU khi save best — để model được lưu đúng là bộ
+        # trọng số đã chơi ván điểm cao, không phải bản sau 1 bước học.
         return self.env.score, self.env.tetrominoes, self.env.cleared_lines, total_reward
 
     def train(self):
@@ -320,6 +323,39 @@ class DQNAgent:
 
             # Chơi 1 episode
             score, pieces, lines, total_reward = self.play_episode()
+
+            # Save best TRƯỚC khi gradient update: model lưu ra file phải đúng
+            # là bộ trọng số ĐÃ CHƠI ván điểm cao này. (Save sau update thì
+            # thành model "hậu duệ" — lệch 1 bước học, không phải bản đã chơi.)
+            # - Chỉ ghi file khi score >= min_save_score (bỏ qua best rác đầu run)
+            # - File kèm điểm trong tên: tetris_best_15025.pth
+            # - Có bản mạnh hơn thì XÓA file best cũ của run này
+            #   (không đụng file best của các run TRƯỚC — tự dọn tay nếu muốn)
+            if score > self.best_score:
+                self.best_score = score
+                if score >= self.args.min_save_score:
+                    print(f"New best score: {score:.0f} - saving model!")
+                    scored_path = os.path.join(self.args.save_path, f"tetris_best_{score:.0f}.pth")
+                    torch.save(self.q_net.state_dict(), scored_path)
+                    torch.save(self.q_net.state_dict(),
+                               os.path.join(self.args.save_path, "tetris_best.pth"))
+
+                    # Xóa bản best yếu hơn mà run này đã lưu trước đó
+                    if self.last_best_path and self.last_best_path != scored_path \
+                            and os.path.exists(self.last_best_path):
+                        os.remove(self.last_best_path)
+                        print(f"  (đã xóa bản cũ: {os.path.basename(self.last_best_path)})")
+                    self.last_best_path = scored_path
+                else:
+                    print(f"New best score: {score:.0f} (< {self.args.min_save_score:.0f}, chưa lưu file)")
+
+            # Train 1 LẦN mỗi episode (giống reference), không phải mỗi khối.
+            # Warm-up: chờ đủ 3000 samples (cap 3000 để buffer to 100k
+            # không làm training bắt đầu trễ cả trăm episodes).
+            if len(self.memory) > min(3000, self.args.memory_size / 10):
+                loss = self.train_step()
+                self.total_loss += loss
+                self.loss_count += 1
 
             # Collect metrics
             self.epoch_scores.append(score)
@@ -365,30 +401,6 @@ class DQNAgent:
             # (trước đây train mỗi khối nên 100 episodes mới hợp lý)
             if (ep + 1) % 10 == 0:
                 self.target_net.load_state_dict(self.q_net.state_dict())
-
-            # Save best model mỗi khi đạt score cao mới.
-            # - Chỉ ghi file khi score >= min_save_score (bỏ qua best rác đầu run)
-            # - File kèm điểm trong tên: tetris_best_15025.pth
-            # - Có bản mạnh hơn thì XÓA file best cũ của run này → thư mục models
-            #   chỉ giữ đúng 1 bản best mạnh nhất mỗi run.
-            #   (Không đụng tới file best của các run TRƯỚC — tự dọn tay nếu muốn)
-            if score > self.best_score:
-                self.best_score = score
-                if score >= self.args.min_save_score:
-                    print(f"New best score: {score:.0f} - saving model!")
-                    scored_path = os.path.join(self.args.save_path, f"tetris_best_{score:.0f}.pth")
-                    torch.save(self.q_net.state_dict(), scored_path)
-                    torch.save(self.q_net.state_dict(),
-                               os.path.join(self.args.save_path, "tetris_best.pth"))
-
-                    # Xóa bản best yếu hơn mà run này đã lưu trước đó
-                    if self.last_best_path and self.last_best_path != scored_path \
-                            and os.path.exists(self.last_best_path):
-                        os.remove(self.last_best_path)
-                        print(f"  (đã xóa bản cũ: {os.path.basename(self.last_best_path)})")
-                    self.last_best_path = scored_path
-                else:
-                    print(f"New best score: {score:.0f} (< {self.args.min_save_score:.0f}, chưa lưu file)")
 
         # Save final model (q_net — target_net là bản copy cũ, có thể lệch tới 100 episodes)
         final_path = os.path.join(self.args.save_path, "tetris_final.pth")
@@ -443,6 +455,14 @@ def get_args():
                         help="Chỉ lưu best model khi score >= ngưỡng này "
                              "(default: 1000; tránh lưu các best rác đầu run)")
 
+    # Reward shaping (phạt theo DELTA feature sau mỗi nước, 0 = tắt)
+    parser.add_argument("--shape_holes", type=float, default=0.5,
+                        help="Phạt mỗi hole MỚI tạo ra (default: 0.5)")
+    parser.add_argument("--shape_bump", type=float, default=0.1,
+                        help="Phạt mỗi đơn vị bumpiness TĂNG thêm (default: 0.1)")
+    parser.add_argument("--shape_height", type=float, default=0.1,
+                        help="Phạt mỗi đơn vị height TĂNG thêm (default: 0.1)")
+
     # Visualization & Tracking
     parser.add_argument("--render", action="store_true",
                         help="Enable live rendering during training")
@@ -457,10 +477,3 @@ if __name__ == "__main__":
     agent = DQNAgent(args)
     agent.train()
 
-    print("\n" + "=" * 70)
-    print("✅ STEP 4 COMPLETE - DQN Training Done!")
-    print("=" * 70)
-    print("\nNext steps:")
-    print("  1. Test model: python test.py --model_path models/tetris_final.pth")
-    print("  2. Or continue with step 5 (Play game with trained model)")
-    print("=" * 70)
