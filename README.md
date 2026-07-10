@@ -1,192 +1,116 @@
 # 🎮 Tetris Deep Q-Learning
 
-A Deep Q-Network (DQN) agent trained to play Tetris using reinforcement learning.
-
-Implemented techniques:
-- Experience Replay
-- Epsilon-Greedy Exploration
-- Target Network
-- Reward Shaping
-
----
+A Deep Q-Network (DQN) agent trained to play Tetris via reinforcement learning.
 
 ## 📋 Project Structure
 
 ```
-
 tetris_from_scratch/
 ├── code/
-│   ├── tetris.py              # Tetris environment and feature extraction
-│   ├── network.py             # DQN model architecture
-│   ├── train.py               # Training pipeline
-│   ├── wandb_config.py        # WandB configuration
-│   └── test.py                # Model evaluation
-│
-├── models/                    # Saved checkpoints
+│   ├── tetris.py          # Environment + feature extraction
+│   ├── network.py         # DQN architecture
+│   ├── train.py           # Training pipeline
+│   ├── wandb_config.py    # WandB setup
+│   └── test.py             # Evaluation
+├── models/                 # Saved checkpoints
 └── README.md
+```
 
-````
-
----
-
-# 🚀 Installation
+## 🚀 Installation
 
 ```bash
 pip install -r requirements.txt
-````
-
----
-
-# 🏋️ Training
-
-Train the model:
-
-```bash
-python code/train.py --num_epochs 3000
 ```
 
-With rendering:
+## 🏋️ Training
 
 ```bash
-python code/train.py --num_epochs 3000 --render
+python code/train.py                # basic
+python code/train.py --render       # with rendering
+python code/train.py --wandb        # with WandB tracking
 ```
 
-With WandB tracking:
+All parameters are configurable via CLI args. Best known config:
 
 ```bash
-python code/train.py --num_epochs 3000 --wandb
+python code/train.py --wandb \
+  --shape_holes -1 --shape_bump -1 --shape_height -1 \
+  --num_epochs 3000 --memory_size 3000 \
+  --max_episode_pieces 100000 --lr 0.001 \
+  --target_update 10 --decay_epochs 2000 --final_eps 0.001
 ```
 
-You can modify training parameters through command-line arguments.
-
----
-
-# 🧪 Testing
-
-Evaluate a trained model:
+## 🧪 Testing
 
 ```bash
 python code/test.py --model_path models/tetris_best_{score}.pth
 ```
 
-Options:
-
-* Default: evaluate statistics over 10 games
-* `--infinite`: continuously render gameplay
-
-Example:
+- Default: reports statistics over 10 games
+- `--infinite`: renders gameplay continuously
 
 ```bash
-python code/test.py \
---model_path models/tetris_best_100000.pth \
---infinite
+python code/test.py --model_path models/tetris_best_100000.pth --infinite
 ```
 
----
+## 🎛️ Hyperparameters
 
-# 🎛️ Hyperparameters
+| Parameter | Default | Description |
+|---|---:|---|
+| num_epochs | 3000 | Training episodes |
+| batch_size | 512 | Training batch size |
+| lr | 0.001 | Learning rate |
+| gamma | 0.99 | Discount factor |
+| initial_eps | 1.0 | Initial exploration |
+| final_eps | 0.01 | Final exploration |
+| memory_size | 3000 | Replay buffer size |
+| max_episode_pieces | 2000 | Episode length limit |
 
-| Parameter          | Default | Description          |
-| ------------------ | ------: | -------------------- |
-| num_epochs         |    3000 | Training episodes    |
-| batch_size         |     512 | Training batch size  |
-| lr                 |   0.001 | Learning rate        |
-| gamma              |    0.99 | Discount factor      |
-| initial_eps        |     1.0 | Initial exploration  |
-| final_eps          |    0.01 | Final exploration    |
-| memory_size        |  100000 | Replay buffer size   |
-| max_episode_pieces |    2000 | Episode length limit |
+**Reward shaping**
 
-Reward shaping:
+| Parameter | Default | Description |
+|---|---:|---|
+| shape_holes | -1.0 | Hole penalty |
+| shape_bump | -1.0 | Bumpiness penalty |
+| shape_height | -1.0 | Height penalty |
 
-| Parameter    | Default | Description       |
-| ------------ | ------: | ----------------- |
-| shape_holes  |    -1.0 | Hole penalty      |
-| shape_bump   |     -1.0 | Bumpiness penalty |
-| shape_height |     -1.0 | Height penalty    |
+## 📊 State Features
 
----
+| Feature | Description |
+|---|---|
+| lines_cleared | Number of cleared lines |
+| holes | Empty spaces below blocks |
+| bumpiness | Height difference between columns |
+| height | Total stack height |
 
-# 📊 State Features
+## 🧠 Model Architecture
 
-The agent uses four handcrafted board features:
+See `code/network.py`.
 
-| Feature       | Description                       |
-| ------------- | --------------------------------- |
-| lines_cleared | Number of cleared lines           |
-| holes         | Empty spaces below blocks         |
-| bumpiness     | Height difference between columns |
-| height        | Total stack height                |
+## ⚙️ Training Method
 
----
+- **Experience Replay** — random batches from stored transitions
+- **Target Network** — periodically updated for stability
+- **Epsilon-Greedy** — exploration → exploitation
+- **Reward Shaping** — guides toward better board states
 
-# 🧠 Model Architecture
-
-```
-Input (4 features)
-        ↓
-Linear(64) + ReLU
-        ↓
-Linear(64) + ReLU
-        ↓
-Output Q-value
-```
-
-Parameters: ~4.5K
-
----
-
-# ⚙️ Training Method
-
-The agent uses:
-
-* **Experience Replay**: random batches from stored experiences
-* **Target Network**: updated periodically for training stability
-* **Epsilon-Greedy**: exploration → exploitation transition
-* **Reward Shaping**: encourages better board states
-
----
-
-# 📦 Output Files
-
-Training generates:
+## 📦 Outputs
 
 ```
-models/
-├── tetris_best_XXXXX.pth
+models/tetris_best_XXXXX.pth   # checkpoints
+code/wandb/                    # WandB logs
 ```
 
-WandB logs:
+## 🛠️ Troubleshooting
 
-```
-code/wandb/
-```
-
----
-
-# 🛠️ Troubleshooting
-
-## Training is slow
-
-Reduce batch size:
-
+**Training is slow**
 ```bash
 python code/train.py --batch_size 256
 ```
-
 Enable CUDA if available.
 
----
-
-## Model stops improving
-
-Try:
-
+**Model stops improving**
 ```bash
 python code/train.py --num_epochs 5000
 ```
-
 Adjust reward shaping parameters.
-
----
-

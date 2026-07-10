@@ -71,3 +71,31 @@ New best score: 6142 - saving model!
   (đã xóa bản cũ: tetris_best_5817.pth)
 New best score: 7164 - saving model!
   (đã xóa bản cũ: tetris_best_6142.pth)
+New best score: 11200 - saving model!
+  (đã xóa bản cũ: tetris_best_7164.pth)
+New best score: 26970 - saving model!
+  (đã xóa bản cũ: tetris_best_11200.pth)
+Ep 2000/3000 | Avg_Score: 1958.70 | Avg_Pieces: 266.79 | Avg_Lines: 92.96 | Loss: 529.6047 | ε: 0.001
+New best score: 44177 - saving model!
+  (đã xóa bản cũ: tetris_best_26970.pth)
+New best score: 68388 - saving model!
+  (đã xóa bản cũ: tetris_best_44177.pth)
+Ep 2100/3000 | Avg_Score: 5321.12 | Avg_Pieces: 631.11 | Avg_Lines: 238.98 | Loss: 635.5360 | ε: 0.001
+Ep 2200/3000 | Avg_Score: 1047.67 | Avg_Pieces: 144.97 | Avg_Lines: 44.22 | Loss: 1071.0027 | ε: 0.001
+Ep 2300/3000 | Avg_Score: 3238.49 | Avg_Pieces: 378.95 | Avg_Lines: 138.03 | Loss: 998.3246 | ε: 0.001
+New best score: 79424 - saving model!
+  (đã xóa bản cũ: tetris_best_68388.pth)
+New best score: 145807 - saving model!
+  (đã xóa bản cũ: tetris_best_79424.pth)
+Ep 2400/3000 | Avg_Score: 5069.46 | Avg_Pieces: 571.82 | Avg_Lines: 215.00 | Loss: 1127.1582 | ε: 0.001
+New best score: 338145 - saving model!
+  (đã xóa bản cũ: tetris_best_145807.pth)
+Ep 2500/3000 | Avg_Score: 6155.51 | Avg_Pieces: 695.45 | Avg_Lines: 263.65 | Loss: 1109.3488 | ε: 0.001
+Ep 2600/3000 | Avg_Score: 3584.77 | Avg_Pieces: 403.27 | Avg_Lines: 147.34 | Loss: 1477.8455 | ε: 0.001
+New best score: 420565 - saving model!
+  (đã xóa bản cũ: tetris_best_338145.pth)
+New best score: 603204 - saving model!
+  (đã xóa bản cũ: tetris_best_420565.pth)
+New best score: 749562 - saving model!
+  (đã xóa bản cũ: tetris_best_603204.pth)
+Ep 2700/3000 | Avg_Score: 41376.01 | Avg_Pieces: 4743.56 | Avg_Lines: 1883.74 | Loss: 1228.3515 | ε: 0.001

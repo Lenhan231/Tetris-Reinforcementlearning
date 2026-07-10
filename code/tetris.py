@@ -86,8 +86,7 @@ class TetrisGame:
         num_lines = len(full_lines)
         for _ in range(num_lines):
             self.board.insert(0, [0] * self.width)
-
-        # tinh diem    
+  
         points = 0
         if num_lines > 0:
             points = 1 + (num_lines ** 2) * 10  
@@ -109,7 +108,6 @@ class TetrisGame:
 
             heights.append(height)
 
-            # Scan từ trên xuống để đếm holes
             filled = False
             for row in range(self.height):
                 if self.board[row][col] != 0:
@@ -117,7 +115,6 @@ class TetrisGame:
                 elif filled:
                     holes += 1
 
-        # Tính bumpiness: tổng chênh lệch chiều cao các cột liền kề
         bumpiness = sum(abs(heights[i] - heights[i + 1]) for i in range(len(heights) - 1))
 
         return (lines, holes, bumpiness, sum(heights))
