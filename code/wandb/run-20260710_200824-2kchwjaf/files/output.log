@@ -1,0 +1,336 @@
+
+======================================================================
+ TRAINING DQN AGENT
+======================================================================
+Device: cpu
+Episodes: 3000
+Batch size: 512
+Learning rate: 0.001
+Gamma: 0.99
+Initial epsilon: 1.0
+Final epsilon: 0.05
+Epsilon decay episodes: 2800.0
+Replay buffer size: 3000
+Max episode pieces: 100000
+======================================================================
+Ep   10/3000 | Avg_Score:      0 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 0.0000 | ε: 0.997
+Ep   20/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 0.0000 | ε: 0.994
+Ep   30/3000 | Avg_Score:      0 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 62.0674 | ε: 0.990
+Ep   40/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 106.7478 | ε: 0.987
+Ep   50/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 85.0004 | ε: 0.983
+Ep   60/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 71.1652 | ε: 0.980
+Ep   70/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 72.5648 | ε: 0.977
+Ep   80/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 75.0135 | ε: 0.973
+Ep   90/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 71.7458 | ε: 0.970
+Ep  100/3000 | Avg_Score:      0 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 74.5430 | ε: 0.966
+New best score: 11 (< 1000, chưa lưu file)
+Ep  110/3000 | Avg_Score:      2 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 170.4575 | ε: 0.963
+Ep  120/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 126.9050 | ε: 0.960
+Ep  130/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 114.1531 | ε: 0.956
+Ep  140/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 114.5414 | ε: 0.953
+Ep  150/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 116.1283 | ε: 0.949
+Ep  160/3000 | Avg_Score:      1 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 103.5720 | ε: 0.946
+Ep  170/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 110.8890 | ε: 0.943
+Ep  180/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 106.6760 | ε: 0.939
+Ep  190/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 108.7767 | ε: 0.936
+Ep  200/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 109.7283 | ε: 0.932
+Ep  210/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 227.1238 | ε: 0.929
+Ep  220/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 191.3027 | ε: 0.926
+Ep  230/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 179.7600 | ε: 0.922
+Ep  240/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 180.0061 | ε: 0.919
+Ep  250/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 168.6100 | ε: 0.916
+Ep  260/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 172.8950 | ε: 0.912
+Ep  270/3000 | Avg_Score:      0 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 174.7376 | ε: 0.909
+Ep  280/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 167.9333 | ε: 0.905
+Ep  290/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 174.7355 | ε: 0.902
+Ep  300/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 177.3044 | ε: 0.899
+Ep  310/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 298.4665 | ε: 0.895
+Ep  320/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 282.6217 | ε: 0.892
+Ep  330/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 266.4735 | ε: 0.888
+Ep  340/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 252.2835 | ε: 0.885
+Ep  350/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 245.1393 | ε: 0.882
+New best score: 41 (< 1000, chưa lưu file)
+Ep  360/3000 | Avg_Score:      4 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 242.3550 | ε: 0.878
+Ep  370/3000 | Avg_Score:      1 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 252.7542 | ε: 0.875
+Ep  380/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 249.8159 | ε: 0.871
+Ep  390/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 238.0324 | ε: 0.868
+Ep  400/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 240.6869 | ε: 0.865
+Ep  410/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 388.0810 | ε: 0.861
+Ep  420/3000 | Avg_Score:      0 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 348.0401 | ε: 0.858
+Ep  430/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 315.7243 | ε: 0.854
+Ep  440/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 325.5537 | ε: 0.851
+Ep  450/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 306.3734 | ε: 0.848
+Ep  460/3000 | Avg_Score:      0 | Avg_Pieces: 21 | Avg_Lines: 0 | Avg_Loss: 310.2674 | ε: 0.844
+Ep  470/3000 | Avg_Score:      1 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 297.3443 | ε: 0.841
+Ep  480/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 288.4763 | ε: 0.837
+Ep  490/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 282.9674 | ε: 0.834
+Ep  500/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 270.8125 | ε: 0.831
+Ep  510/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 442.4322 | ε: 0.827
+Ep  520/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 373.1639 | ε: 0.824
+Ep  530/3000 | Avg_Score:      1 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 362.3015 | ε: 0.821
+Ep  540/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 327.3196 | ε: 0.817
+Ep  550/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 342.6349 | ε: 0.814
+Ep  560/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 343.4705 | ε: 0.810
+Ep  570/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 331.2157 | ε: 0.807
+Ep  580/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 335.0907 | ε: 0.804
+Ep  590/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 324.6824 | ε: 0.800
+Ep  600/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 318.5602 | ε: 0.797
+Ep  610/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 411.1057 | ε: 0.793
+Ep  620/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 384.1891 | ε: 0.790
+Ep  630/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 352.2955 | ε: 0.787
+Ep  640/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 343.8562 | ε: 0.783
+Ep  650/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 350.0048 | ε: 0.780
+Ep  660/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 341.9130 | ε: 0.776
+Ep  670/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 328.3237 | ε: 0.773
+Ep  680/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 325.3315 | ε: 0.770
+Ep  690/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 352.7232 | ε: 0.766
+Ep  700/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 334.4518 | ε: 0.763
+Ep  710/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 381.8881 | ε: 0.759
+Ep  720/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 342.3074 | ε: 0.756
+Ep  730/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 358.2707 | ε: 0.753
+Ep  740/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 303.3741 | ε: 0.749
+Ep  750/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 319.4993 | ε: 0.746
+Ep  760/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 278.3475 | ε: 0.742
+Ep  770/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 310.7214 | ε: 0.739
+Ep  780/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 316.5070 | ε: 0.736
+Ep  790/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 291.0296 | ε: 0.732
+Ep  800/3000 | Avg_Score:      1 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 343.9126 | ε: 0.729
+Ep  810/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 328.1043 | ε: 0.726
+Ep  820/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 285.9601 | ε: 0.722
+Ep  830/3000 | Avg_Score:      0 | Avg_Pieces: 16 | Avg_Lines: 0 | Avg_Loss: 276.7285 | ε: 0.719
+Ep  840/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 247.3744 | ε: 0.715
+Ep  850/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 264.7759 | ε: 0.712
+Ep  860/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 244.7329 | ε: 0.709
+Ep  870/3000 | Avg_Score:      0 | Avg_Pieces: 21 | Avg_Lines: 0 | Avg_Loss: 257.8913 | ε: 0.705
+Ep  880/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 249.0429 | ε: 0.702
+Ep  890/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 253.6283 | ε: 0.698
+Ep  900/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 243.3655 | ε: 0.695
+Ep  910/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 255.1097 | ε: 0.692
+Ep  920/3000 | Avg_Score:      0 | Avg_Pieces: 17 | Avg_Lines: 0 | Avg_Loss: 240.5360 | ε: 0.688
+Ep  930/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 228.1221 | ε: 0.685
+Ep  940/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 233.7738 | ε: 0.681
+Ep  950/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 225.2070 | ε: 0.678
+Ep  960/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 204.7570 | ε: 0.675
+Ep  970/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 206.6246 | ε: 0.671
+Ep  980/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 213.5156 | ε: 0.668
+Ep  990/3000 | Avg_Score:      1 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 227.7915 | ε: 0.664
+Ep 1000/3000 | Avg_Score:      0 | Avg_Pieces: 19 | Avg_Lines: 0 | Avg_Loss: 226.3921 | ε: 0.661
+Ep 1010/3000 | Avg_Score:      0 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 230.9845 | ε: 0.658
+Ep 1020/3000 | Avg_Score:      0 | Avg_Pieces: 21 | Avg_Lines: 0 | Avg_Loss: 224.2405 | ε: 0.654
+Ep 1030/3000 | Avg_Score:      2 | Avg_Pieces: 22 | Avg_Lines: 0 | Avg_Loss: 211.5770 | ε: 0.651
+Ep 1040/3000 | Avg_Score:      1 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 203.0326 | ε: 0.647
+Ep 1050/3000 | Avg_Score:      0 | Avg_Pieces: 23 | Avg_Lines: 0 | Avg_Loss: 199.8867 | ε: 0.644
+Ep 1060/3000 | Avg_Score:      1 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 189.6915 | ε: 0.641
+Ep 1070/3000 | Avg_Score:      0 | Avg_Pieces: 22 | Avg_Lines: 0 | Avg_Loss: 201.0364 | ε: 0.637
+Ep 1080/3000 | Avg_Score:      2 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 196.9286 | ε: 0.634
+Ep 1090/3000 | Avg_Score:      1 | Avg_Pieces: 22 | Avg_Lines: 0 | Avg_Loss: 221.9308 | ε: 0.631
+Ep 1100/3000 | Avg_Score:      0 | Avg_Pieces: 18 | Avg_Lines: 0 | Avg_Loss: 202.5425 | ε: 0.627
+Ep 1110/3000 | Avg_Score:      1 | Avg_Pieces: 21 | Avg_Lines: 0 | Avg_Loss: 223.6083 | ε: 0.624
+Ep 1120/3000 | Avg_Score:      1 | Avg_Pieces: 20 | Avg_Lines: 0 | Avg_Loss: 216.9663 | ε: 0.620
+Ep 1130/3000 | Avg_Score:      2 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 208.4427 | ε: 0.617
+Ep 1140/3000 | Avg_Score:      1 | Avg_Pieces: 25 | Avg_Lines: 0 | Avg_Loss: 235.3091 | ε: 0.614
+Ep 1150/3000 | Avg_Score:      4 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 226.1317 | ε: 0.610
+Ep 1160/3000 | Avg_Score:      1 | Avg_Pieces: 23 | Avg_Lines: 0 | Avg_Loss: 216.0676 | ε: 0.607
+Ep 1170/3000 | Avg_Score:      4 | Avg_Pieces: 25 | Avg_Lines: 0 | Avg_Loss: 248.3522 | ε: 0.603
+Ep 1180/3000 | Avg_Score:      7 | Avg_Pieces: 25 | Avg_Lines: 1 | Avg_Loss: 263.5186 | ε: 0.600
+Ep 1190/3000 | Avg_Score:      1 | Avg_Pieces: 22 | Avg_Lines: 0 | Avg_Loss: 288.8846 | ε: 0.597
+Ep 1200/3000 | Avg_Score:      7 | Avg_Pieces: 26 | Avg_Lines: 1 | Avg_Loss: 248.9081 | ε: 0.593
+Ep 1210/3000 | Avg_Score:      1 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 273.8007 | ε: 0.590
+Ep 1220/3000 | Avg_Score:      4 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 307.1040 | ε: 0.586
+Ep 1230/3000 | Avg_Score:      0 | Avg_Pieces: 25 | Avg_Lines: 0 | Avg_Loss: 250.0607 | ε: 0.583
+Ep 1240/3000 | Avg_Score:      6 | Avg_Pieces: 26 | Avg_Lines: 0 | Avg_Loss: 290.4148 | ε: 0.580
+Ep 1250/3000 | Avg_Score:      0 | Avg_Pieces: 25 | Avg_Lines: 0 | Avg_Loss: 240.2012 | ε: 0.576
+Ep 1260/3000 | Avg_Score:      2 | Avg_Pieces: 27 | Avg_Lines: 0 | Avg_Loss: 313.3368 | ε: 0.573
+Ep 1270/3000 | Avg_Score:      4 | Avg_Pieces: 26 | Avg_Lines: 0 | Avg_Loss: 305.5081 | ε: 0.569
+Ep 1280/3000 | Avg_Score:      1 | Avg_Pieces: 27 | Avg_Lines: 0 | Avg_Loss: 270.1705 | ε: 0.566
+Ep 1290/3000 | Avg_Score:      1 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 348.7489 | ε: 0.563
+Ep 1300/3000 | Avg_Score:      3 | Avg_Pieces: 27 | Avg_Lines: 0 | Avg_Loss: 340.6564 | ε: 0.559
+Ep 1310/3000 | Avg_Score:      4 | Avg_Pieces: 26 | Avg_Lines: 0 | Avg_Loss: 329.8034 | ε: 0.556
+Ep 1320/3000 | Avg_Score:      4 | Avg_Pieces: 23 | Avg_Lines: 0 | Avg_Loss: 337.3762 | ε: 0.552
+Ep 1330/3000 | Avg_Score:      3 | Avg_Pieces: 28 | Avg_Lines: 0 | Avg_Loss: 317.5041 | ε: 0.549
+New best score: 91 (< 1000, chưa lưu file)
+Ep 1340/3000 | Avg_Score:     12 | Avg_Pieces: 28 | Avg_Lines: 1 | Avg_Loss: 368.9960 | ε: 0.546
+Ep 1350/3000 | Avg_Score:      4 | Avg_Pieces: 29 | Avg_Lines: 0 | Avg_Loss: 382.6177 | ε: 0.542
+Ep 1360/3000 | Avg_Score:      0 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 382.4272 | ε: 0.539
+Ep 1370/3000 | Avg_Score:      1 | Avg_Pieces: 26 | Avg_Lines: 0 | Avg_Loss: 385.0847 | ε: 0.536
+Ep 1380/3000 | Avg_Score:     11 | Avg_Pieces: 28 | Avg_Lines: 1 | Avg_Loss: 385.1595 | ε: 0.532
+Ep 1390/3000 | Avg_Score:      4 | Avg_Pieces: 30 | Avg_Lines: 0 | Avg_Loss: 391.2074 | ε: 0.529
+Ep 1400/3000 | Avg_Score:      2 | Avg_Pieces: 28 | Avg_Lines: 0 | Avg_Loss: 405.4785 | ε: 0.525
+Ep 1410/3000 | Avg_Score:      4 | Avg_Pieces: 27 | Avg_Lines: 0 | Avg_Loss: 350.6692 | ε: 0.522
+Ep 1420/3000 | Avg_Score:      1 | Avg_Pieces: 24 | Avg_Lines: 0 | Avg_Loss: 311.2356 | ε: 0.519
+Ep 1430/3000 | Avg_Score:      3 | Avg_Pieces: 28 | Avg_Lines: 0 | Avg_Loss: 341.6151 | ε: 0.515
+Ep 1440/3000 | Avg_Score:      3 | Avg_Pieces: 30 | Avg_Lines: 0 | Avg_Loss: 313.3313 | ε: 0.512
+Ep 1450/3000 | Avg_Score:      3 | Avg_Pieces: 29 | Avg_Lines: 0 | Avg_Loss: 360.6813 | ε: 0.508
+Ep 1460/3000 | Avg_Score:      2 | Avg_Pieces: 30 | Avg_Lines: 0 | Avg_Loss: 399.5535 | ε: 0.505
+Ep 1470/3000 | Avg_Score:      1 | Avg_Pieces: 28 | Avg_Lines: 0 | Avg_Loss: 369.9088 | ε: 0.502
+Ep 1480/3000 | Avg_Score:     14 | Avg_Pieces: 31 | Avg_Lines: 1 | Avg_Loss: 412.8115 | ε: 0.498
+Ep 1490/3000 | Avg_Score:      2 | Avg_Pieces: 26 | Avg_Lines: 0 | Avg_Loss: 357.2488 | ε: 0.495
+Ep 1500/3000 | Avg_Score:      6 | Avg_Pieces: 27 | Avg_Lines: 0 | Avg_Loss: 355.4924 | ε: 0.491
+Ep 1510/3000 | Avg_Score:      6 | Avg_Pieces: 26 | Avg_Lines: 0 | Avg_Loss: 375.3362 | ε: 0.488
+Ep 1520/3000 | Avg_Score:      5 | Avg_Pieces: 26 | Avg_Lines: 0 | Avg_Loss: 320.1002 | ε: 0.485
+Ep 1530/3000 | Avg_Score:      2 | Avg_Pieces: 25 | Avg_Lines: 0 | Avg_Loss: 349.0742 | ε: 0.481
+Ep 1540/3000 | Avg_Score:     10 | Avg_Pieces: 31 | Avg_Lines: 1 | Avg_Loss: 358.3533 | ε: 0.478
+Ep 1550/3000 | Avg_Score:      6 | Avg_Pieces: 30 | Avg_Lines: 0 | Avg_Loss: 380.0202 | ε: 0.474
+Ep 1560/3000 | Avg_Score:      3 | Avg_Pieces: 29 | Avg_Lines: 0 | Avg_Loss: 304.9365 | ε: 0.471
+Ep 1570/3000 | Avg_Score:     15 | Avg_Pieces: 32 | Avg_Lines: 1 | Avg_Loss: 387.2467 | ε: 0.468
+Ep 1580/3000 | Avg_Score:     11 | Avg_Pieces: 30 | Avg_Lines: 1 | Avg_Loss: 355.2230 | ε: 0.464
+Ep 1590/3000 | Avg_Score:      3 | Avg_Pieces: 31 | Avg_Lines: 0 | Avg_Loss: 335.0943 | ε: 0.461
+Ep 1600/3000 | Avg_Score:      3 | Avg_Pieces: 29 | Avg_Lines: 0 | Avg_Loss: 467.2349 | ε: 0.457
+Ep 1610/3000 | Avg_Score:     12 | Avg_Pieces: 29 | Avg_Lines: 1 | Avg_Loss: 356.2810 | ε: 0.454
+Ep 1620/3000 | Avg_Score:      7 | Avg_Pieces: 30 | Avg_Lines: 1 | Avg_Loss: 389.9136 | ε: 0.451
+Ep 1630/3000 | Avg_Score:     20 | Avg_Pieces: 34 | Avg_Lines: 2 | Avg_Loss: 341.3409 | ε: 0.447
+Ep 1640/3000 | Avg_Score:      7 | Avg_Pieces: 29 | Avg_Lines: 1 | Avg_Loss: 313.9355 | ε: 0.444
+Ep 1650/3000 | Avg_Score:      7 | Avg_Pieces: 30 | Avg_Lines: 1 | Avg_Loss: 370.7471 | ε: 0.441
+Ep 1660/3000 | Avg_Score:     10 | Avg_Pieces: 31 | Avg_Lines: 1 | Avg_Loss: 314.7268 | ε: 0.437
+Ep 1670/3000 | Avg_Score:      4 | Avg_Pieces: 28 | Avg_Lines: 0 | Avg_Loss: 393.9679 | ε: 0.434
+Ep 1680/3000 | Avg_Score:      7 | Avg_Pieces: 30 | Avg_Lines: 0 | Avg_Loss: 357.7649 | ε: 0.430
+Ep 1690/3000 | Avg_Score:     13 | Avg_Pieces: 32 | Avg_Lines: 1 | Avg_Loss: 330.4372 | ε: 0.427
+Ep 1700/3000 | Avg_Score:      8 | Avg_Pieces: 30 | Avg_Lines: 1 | Avg_Loss: 338.0293 | ε: 0.424
+Ep 1710/3000 | Avg_Score:      7 | Avg_Pieces: 30 | Avg_Lines: 1 | Avg_Loss: 357.1999 | ε: 0.420
+New best score: 135 (< 1000, chưa lưu file)
+Ep 1720/3000 | Avg_Score:     24 | Avg_Pieces: 32 | Avg_Lines: 2 | Avg_Loss: 395.7632 | ε: 0.417
+Ep 1730/3000 | Avg_Score:      8 | Avg_Pieces: 30 | Avg_Lines: 1 | Avg_Loss: 378.9264 | ε: 0.413
+Ep 1740/3000 | Avg_Score:      9 | Avg_Pieces: 32 | Avg_Lines: 1 | Avg_Loss: 431.9091 | ε: 0.410
+Ep 1750/3000 | Avg_Score:     22 | Avg_Pieces: 34 | Avg_Lines: 2 | Avg_Loss: 427.3904 | ε: 0.407
+Ep 1760/3000 | Avg_Score:     18 | Avg_Pieces: 35 | Avg_Lines: 2 | Avg_Loss: 389.2037 | ε: 0.403
+Ep 1770/3000 | Avg_Score:     14 | Avg_Pieces: 32 | Avg_Lines: 1 | Avg_Loss: 389.8910 | ε: 0.400
+Ep 1780/3000 | Avg_Score:     17 | Avg_Pieces: 33 | Avg_Lines: 1 | Avg_Loss: 394.8937 | ε: 0.396
+Ep 1790/3000 | Avg_Score:     14 | Avg_Pieces: 31 | Avg_Lines: 1 | Avg_Loss: 358.5495 | ε: 0.393
+Ep 1800/3000 | Avg_Score:     10 | Avg_Pieces: 34 | Avg_Lines: 1 | Avg_Loss: 399.6688 | ε: 0.390
+Ep 1810/3000 | Avg_Score:     24 | Avg_Pieces: 37 | Avg_Lines: 2 | Avg_Loss: 326.7285 | ε: 0.386
+Ep 1820/3000 | Avg_Score:     13 | Avg_Pieces: 32 | Avg_Lines: 1 | Avg_Loss: 348.7945 | ε: 0.383
+Ep 1830/3000 | Avg_Score:     27 | Avg_Pieces: 33 | Avg_Lines: 2 | Avg_Loss: 320.3154 | ε: 0.379
+Ep 1840/3000 | Avg_Score:     32 | Avg_Pieces: 36 | Avg_Lines: 2 | Avg_Loss: 308.3164 | ε: 0.376
+Ep 1850/3000 | Avg_Score:     35 | Avg_Pieces: 38 | Avg_Lines: 3 | Avg_Loss: 316.2685 | ε: 0.373
+Ep 1860/3000 | Avg_Score:     12 | Avg_Pieces: 32 | Avg_Lines: 1 | Avg_Loss: 297.3323 | ε: 0.369
+Ep 1870/3000 | Avg_Score:     20 | Avg_Pieces: 35 | Avg_Lines: 2 | Avg_Loss: 305.2869 | ε: 0.366
+Ep 1880/3000 | Avg_Score:     18 | Avg_Pieces: 36 | Avg_Lines: 2 | Avg_Loss: 296.8417 | ε: 0.362
+Ep 1890/3000 | Avg_Score:     34 | Avg_Pieces: 37 | Avg_Lines: 2 | Avg_Loss: 316.8404 | ε: 0.359
+Ep 1900/3000 | Avg_Score:     40 | Avg_Pieces: 37 | Avg_Lines: 3 | Avg_Loss: 371.9201 | ε: 0.356
+New best score: 170 (< 1000, chưa lưu file)
+Ep 1910/3000 | Avg_Score:     34 | Avg_Pieces: 38 | Avg_Lines: 3 | Avg_Loss: 306.1923 | ε: 0.352
+Ep 1920/3000 | Avg_Score:     14 | Avg_Pieces: 33 | Avg_Lines: 1 | Avg_Loss: 291.5850 | ε: 0.349
+Ep 1930/3000 | Avg_Score:     39 | Avg_Pieces: 39 | Avg_Lines: 3 | Avg_Loss: 255.6363 | ε: 0.346
+Ep 1940/3000 | Avg_Score:     21 | Avg_Pieces: 32 | Avg_Lines: 2 | Avg_Loss: 349.4475 | ε: 0.342
+Ep 1950/3000 | Avg_Score:     38 | Avg_Pieces: 40 | Avg_Lines: 3 | Avg_Loss: 349.2591 | ε: 0.339
+Ep 1960/3000 | Avg_Score:     27 | Avg_Pieces: 35 | Avg_Lines: 2 | Avg_Loss: 307.4965 | ε: 0.335
+Ep 1970/3000 | Avg_Score:     30 | Avg_Pieces: 37 | Avg_Lines: 3 | Avg_Loss: 317.3717 | ε: 0.332
+Ep 1980/3000 | Avg_Score:     38 | Avg_Pieces: 37 | Avg_Lines: 3 | Avg_Loss: 346.5560 | ε: 0.329
+Ep 1990/3000 | Avg_Score:     35 | Avg_Pieces: 38 | Avg_Lines: 2 | Avg_Loss: 351.1414 | ε: 0.325
+Ep 2000/3000 | Avg_Score:     21 | Avg_Pieces: 34 | Avg_Lines: 2 | Avg_Loss: 262.7014 | ε: 0.322
+Ep 2010/3000 | Avg_Score:     42 | Avg_Pieces: 39 | Avg_Lines: 4 | Avg_Loss: 256.0962 | ε: 0.318
+Ep 2020/3000 | Avg_Score:     47 | Avg_Pieces: 40 | Avg_Lines: 4 | Avg_Loss: 246.7994 | ε: 0.315
+Ep 2030/3000 | Avg_Score:     40 | Avg_Pieces: 39 | Avg_Lines: 3 | Avg_Loss: 228.4672 | ε: 0.312
+Ep 2040/3000 | Avg_Score:     42 | Avg_Pieces: 37 | Avg_Lines: 3 | Avg_Loss: 247.1681 | ε: 0.308
+Ep 2050/3000 | Avg_Score:     52 | Avg_Pieces: 43 | Avg_Lines: 5 | Avg_Loss: 228.9581 | ε: 0.305
+Ep 2060/3000 | Avg_Score:     40 | Avg_Pieces: 39 | Avg_Lines: 3 | Avg_Loss: 248.5659 | ε: 0.301
+Ep 2070/3000 | Avg_Score:     43 | Avg_Pieces: 42 | Avg_Lines: 3 | Avg_Loss: 268.3781 | ε: 0.298
+Ep 2080/3000 | Avg_Score:     59 | Avg_Pieces: 43 | Avg_Lines: 4 | Avg_Loss: 236.4924 | ε: 0.295
+Ep 2090/3000 | Avg_Score:     58 | Avg_Pieces: 41 | Avg_Lines: 4 | Avg_Loss: 220.5044 | ε: 0.291
+Ep 2100/3000 | Avg_Score:     40 | Avg_Pieces: 40 | Avg_Lines: 3 | Avg_Loss: 217.3288 | ε: 0.288
+Ep 2110/3000 | Avg_Score:     30 | Avg_Pieces: 38 | Avg_Lines: 2 | Avg_Loss: 234.2906 | ε: 0.284
+Ep 2120/3000 | Avg_Score:     41 | Avg_Pieces: 39 | Avg_Lines: 3 | Avg_Loss: 250.6782 | ε: 0.281
+New best score: 195 (< 1000, chưa lưu file)
+Ep 2130/3000 | Avg_Score:     64 | Avg_Pieces: 42 | Avg_Lines: 4 | Avg_Loss: 266.8008 | ε: 0.278
+Ep 2140/3000 | Avg_Score:     43 | Avg_Pieces: 41 | Avg_Lines: 3 | Avg_Loss: 301.3975 | ε: 0.274
+New best score: 244 (< 1000, chưa lưu file)
+Ep 2150/3000 | Avg_Score:     59 | Avg_Pieces: 40 | Avg_Lines: 4 | Avg_Loss: 333.0817 | ε: 0.271
+Ep 2160/3000 | Avg_Score:     63 | Avg_Pieces: 42 | Avg_Lines: 4 | Avg_Loss: 338.4080 | ε: 0.267
+New best score: 294 (< 1000, chưa lưu file)
+Ep 2170/3000 | Avg_Score:     94 | Avg_Pieces: 47 | Avg_Lines: 6 | Avg_Loss: 331.3720 | ε: 0.264
+Ep 2180/3000 | Avg_Score:     95 | Avg_Pieces: 48 | Avg_Lines: 6 | Avg_Loss: 303.3197 | ε: 0.261
+New best score: 305 (< 1000, chưa lưu file)
+Ep 2190/3000 | Avg_Score:     98 | Avg_Pieces: 51 | Avg_Lines: 7 | Avg_Loss: 249.6525 | ε: 0.257
+Ep 2200/3000 | Avg_Score:     62 | Avg_Pieces: 44 | Avg_Lines: 5 | Avg_Loss: 299.5492 | ε: 0.254
+Ep 2210/3000 | Avg_Score:     81 | Avg_Pieces: 48 | Avg_Lines: 6 | Avg_Loss: 248.2101 | ε: 0.251
+Ep 2220/3000 | Avg_Score:     66 | Avg_Pieces: 45 | Avg_Lines: 5 | Avg_Loss: 238.5547 | ε: 0.247
+Ep 2230/3000 | Avg_Score:     48 | Avg_Pieces: 41 | Avg_Lines: 4 | Avg_Loss: 273.4506 | ε: 0.244
+Ep 2240/3000 | Avg_Score:     65 | Avg_Pieces: 43 | Avg_Lines: 4 | Avg_Loss: 318.4949 | ε: 0.240
+Ep 2250/3000 | Avg_Score:     87 | Avg_Pieces: 48 | Avg_Lines: 6 | Avg_Loss: 276.5125 | ε: 0.237
+Ep 2260/3000 | Avg_Score:     69 | Avg_Pieces: 44 | Avg_Lines: 5 | Avg_Loss: 222.3840 | ε: 0.234
+Ep 2270/3000 | Avg_Score:     66 | Avg_Pieces: 44 | Avg_Lines: 4 | Avg_Loss: 330.1361 | ε: 0.230
+Ep 2280/3000 | Avg_Score:    149 | Avg_Pieces: 61 | Avg_Lines: 10 | Avg_Loss: 366.1105 | ε: 0.227
+Ep 2290/3000 | Avg_Score:    130 | Avg_Pieces: 55 | Avg_Lines: 9 | Avg_Loss: 299.5230 | ε: 0.223
+Ep 2300/3000 | Avg_Score:    102 | Avg_Pieces: 51 | Avg_Lines: 7 | Avg_Loss: 250.0896 | ε: 0.220
+Ep 2310/3000 | Avg_Score:    138 | Avg_Pieces: 56 | Avg_Lines: 9 | Avg_Loss: 336.2948 | ε: 0.217
+New best score: 490 (< 1000, chưa lưu file)
+Ep 2320/3000 | Avg_Score:    157 | Avg_Pieces: 56 | Avg_Lines: 10 | Avg_Loss: 304.1061 | ε: 0.213
+Ep 2330/3000 | Avg_Score:    174 | Avg_Pieces: 62 | Avg_Lines: 11 | Avg_Loss: 285.5905 | ε: 0.210
+Ep 2340/3000 | Avg_Score:    174 | Avg_Pieces: 62 | Avg_Lines: 12 | Avg_Loss: 275.0509 | ε: 0.206
+Ep 2350/3000 | Avg_Score:     78 | Avg_Pieces: 48 | Avg_Lines: 6 | Avg_Loss: 282.8880 | ε: 0.203
+Ep 2360/3000 | Avg_Score:    120 | Avg_Pieces: 53 | Avg_Lines: 8 | Avg_Loss: 266.6641 | ε: 0.200
+Ep 2370/3000 | Avg_Score:    103 | Avg_Pieces: 51 | Avg_Lines: 8 | Avg_Loss: 240.6281 | ε: 0.196
+New best score: 697 (< 1000, chưa lưu file)
+Ep 2380/3000 | Avg_Score:    183 | Avg_Pieces: 62 | Avg_Lines: 11 | Avg_Loss: 229.6270 | ε: 0.193
+Ep 2390/3000 | Avg_Score:    132 | Avg_Pieces: 55 | Avg_Lines: 9 | Avg_Loss: 227.6196 | ε: 0.189
+Ep 2400/3000 | Avg_Score:    187 | Avg_Pieces: 65 | Avg_Lines: 12 | Avg_Loss: 298.6055 | ε: 0.186
+Ep 2410/3000 | Avg_Score:    201 | Avg_Pieces: 67 | Avg_Lines: 13 | Avg_Loss: 241.1340 | ε: 0.183
+Ep 2420/3000 | Avg_Score:    118 | Avg_Pieces: 52 | Avg_Lines: 8 | Avg_Loss: 237.4895 | ε: 0.179
+Ep 2430/3000 | Avg_Score:    200 | Avg_Pieces: 64 | Avg_Lines: 13 | Avg_Loss: 274.9720 | ε: 0.176
+Ep 2440/3000 | Avg_Score:    210 | Avg_Pieces: 64 | Avg_Lines: 12 | Avg_Loss: 277.0579 | ε: 0.172
+Ep 2450/3000 | Avg_Score:    215 | Avg_Pieces: 67 | Avg_Lines: 14 | Avg_Loss: 262.9002 | ε: 0.169
+Ep 2460/3000 | Avg_Score:    217 | Avg_Pieces: 68 | Avg_Lines: 14 | Avg_Loss: 274.6776 | ε: 0.166
+Ep 2470/3000 | Avg_Score:    150 | Avg_Pieces: 54 | Avg_Lines: 8 | Avg_Loss: 244.6133 | ε: 0.162
+Ep 2480/3000 | Avg_Score:    185 | Avg_Pieces: 64 | Avg_Lines: 12 | Avg_Loss: 331.3133 | ε: 0.159
+Ep 2490/3000 | Avg_Score:    152 | Avg_Pieces: 60 | Avg_Lines: 10 | Avg_Loss: 276.4805 | ε: 0.156
+Ep 2500/3000 | Avg_Score:    218 | Avg_Pieces: 67 | Avg_Lines: 14 | Avg_Loss: 270.9306 | ε: 0.152
+New best score: 933 (< 1000, chưa lưu file)
+Ep 2510/3000 | Avg_Score:    280 | Avg_Pieces: 76 | Avg_Lines: 17 | Avg_Loss: 324.3601 | ε: 0.149
+Ep 2520/3000 | Avg_Score:    278 | Avg_Pieces: 76 | Avg_Lines: 17 | Avg_Loss: 355.0566 | ε: 0.145
+Ep 2530/3000 | Avg_Score:    296 | Avg_Pieces: 75 | Avg_Lines: 17 | Avg_Loss: 292.2588 | ε: 0.142
+Ep 2540/3000 | Avg_Score:    313 | Avg_Pieces: 81 | Avg_Lines: 18 | Avg_Loss: 278.5499 | ε: 0.139
+Ep 2550/3000 | Avg_Score:    330 | Avg_Pieces: 85 | Avg_Lines: 20 | Avg_Loss: 291.2349 | ε: 0.135
+Ep 2560/3000 | Avg_Score:    187 | Avg_Pieces: 60 | Avg_Lines: 10 | Avg_Loss: 262.3690 | ε: 0.132
+Ep 2570/3000 | Avg_Score:    274 | Avg_Pieces: 72 | Avg_Lines: 15 | Avg_Loss: 294.1185 | ε: 0.128
+Ep 2580/3000 | Avg_Score:    293 | Avg_Pieces: 83 | Avg_Lines: 19 | Avg_Loss: 327.1318 | ε: 0.125
+New best score: 2024 - saving model!
+Ep 2590/3000 | Avg_Score:    725 | Avg_Pieces: 150 | Avg_Lines: 46 | Avg_Loss: 304.4215 | ε: 0.122
+Ep 2600/3000 | Avg_Score:    494 | Avg_Pieces: 112 | Avg_Lines: 31 | Avg_Loss: 255.1394 | ε: 0.118
+Ep 2610/3000 | Avg_Score:    262 | Avg_Pieces: 75 | Avg_Lines: 16 | Avg_Loss: 303.1497 | ε: 0.115
+Ep 2620/3000 | Avg_Score:    279 | Avg_Pieces: 81 | Avg_Lines: 19 | Avg_Loss: 254.0940 | ε: 0.111
+Ep 2630/3000 | Avg_Score:    355 | Avg_Pieces: 83 | Avg_Lines: 20 | Avg_Loss: 357.3442 | ε: 0.108
+Ep 2640/3000 | Avg_Score:    395 | Avg_Pieces: 90 | Avg_Lines: 22 | Avg_Loss: 316.4072 | ε: 0.105
+Ep 2650/3000 | Avg_Score:    502 | Avg_Pieces: 101 | Avg_Lines: 27 | Avg_Loss: 387.7188 | ε: 0.101
+Ep 2660/3000 | Avg_Score:    405 | Avg_Pieces: 94 | Avg_Lines: 24 | Avg_Loss: 344.1647 | ε: 0.098
+Ep 2670/3000 | Avg_Score:    479 | Avg_Pieces: 100 | Avg_Lines: 26 | Avg_Loss: 307.5082 | ε: 0.094
+New best score: 3161 - saving model!
+  (đã xóa bản cũ: tetris_best_2024.pth)
+Ep 2680/3000 | Avg_Score:    544 | Avg_Pieces: 115 | Avg_Lines: 32 | Avg_Loss: 381.9928 | ε: 0.091
+Ep 2690/3000 | Avg_Score:    363 | Avg_Pieces: 86 | Avg_Lines: 20 | Avg_Loss: 343.0394 | ε: 0.088
+Ep 2700/3000 | Avg_Score:    549 | Avg_Pieces: 114 | Avg_Lines: 31 | Avg_Loss: 309.4409 | ε: 0.084
+Ep 2710/3000 | Avg_Score:    404 | Avg_Pieces: 82 | Avg_Lines: 19 | Avg_Loss: 338.4327 | ε: 0.081
+Ep 2720/3000 | Avg_Score:    982 | Avg_Pieces: 146 | Avg_Lines: 44 | Avg_Loss: 455.9387 | ε: 0.077
+Ep 2730/3000 | Avg_Score:    617 | Avg_Pieces: 110 | Avg_Lines: 30 | Avg_Loss: 433.5692 | ε: 0.074
+Ep 2740/3000 | Avg_Score:    435 | Avg_Pieces: 90 | Avg_Lines: 23 | Avg_Loss: 532.1691 | ε: 0.071
+Ep 2750/3000 | Avg_Score:    487 | Avg_Pieces: 100 | Avg_Lines: 26 | Avg_Loss: 480.0201 | ε: 0.067
+Ep 2760/3000 | Avg_Score:    442 | Avg_Pieces: 90 | Avg_Lines: 22 | Avg_Loss: 573.7732 | ε: 0.064
+Ep 2770/3000 | Avg_Score:    934 | Avg_Pieces: 176 | Avg_Lines: 56 | Avg_Loss: 484.2137 | ε: 0.061
+Ep 2780/3000 | Avg_Score:    843 | Avg_Pieces: 144 | Avg_Lines: 44 | Avg_Loss: 283.2935 | ε: 0.057
+New best score: 4236 - saving model!
+  (đã xóa bản cũ: tetris_best_3161.pth)
+Ep 2790/3000 | Avg_Score:   1249 | Avg_Pieces: 177 | Avg_Lines: 57 | Avg_Loss: 333.1696 | ε: 0.054
+Ep 2800/3000 | Avg_Score:    446 | Avg_Pieces: 95 | Avg_Lines: 24 | Avg_Loss: 449.1895 | ε: 0.050
+Ep 2810/3000 | Avg_Score:    382 | Avg_Pieces: 85 | Avg_Lines: 20 | Avg_Loss: 545.2225 | ε: 0.050
+Ep 2820/3000 | Avg_Score:   1303 | Avg_Pieces: 211 | Avg_Lines: 70 | Avg_Loss: 427.3355 | ε: 0.050
+Ep 2830/3000 | Avg_Score:   1184 | Avg_Pieces: 203 | Avg_Lines: 66 | Avg_Loss: 342.5635 | ε: 0.050
+Ep 2840/3000 | Avg_Score:    885 | Avg_Pieces: 140 | Avg_Lines: 42 | Avg_Loss: 348.1385 | ε: 0.050
+Ep 2850/3000 | Avg_Score:    678 | Avg_Pieces: 124 | Avg_Lines: 36 | Avg_Loss: 402.7073 | ε: 0.050
+Ep 2860/3000 | Avg_Score:    228 | Avg_Pieces: 66 | Avg_Lines: 13 | Avg_Loss: 598.9683 | ε: 0.050
+Ep 2870/3000 | Avg_Score:   1197 | Avg_Pieces: 183 | Avg_Lines: 59 | Avg_Loss: 609.9647 | ε: 0.050
+Ep 2880/3000 | Avg_Score:    780 | Avg_Pieces: 127 | Avg_Lines: 38 | Avg_Loss: 412.6692 | ε: 0.050
+Ep 2890/3000 | Avg_Score:    612 | Avg_Pieces: 110 | Avg_Lines: 30 | Avg_Loss: 463.5009 | ε: 0.050
+Ep 2900/3000 | Avg_Score:    440 | Avg_Pieces: 94 | Avg_Lines: 24 | Avg_Loss: 490.9329 | ε: 0.050
+Ep 2910/3000 | Avg_Score:   1340 | Avg_Pieces: 211 | Avg_Lines: 71 | Avg_Loss: 441.7781 | ε: 0.050
+New best score: 5530 - saving model!
+  (đã xóa bản cũ: tetris_best_4236.pth)
+Ep 2920/3000 | Avg_Score:   1968 | Avg_Pieces: 298 | Avg_Lines: 105 | Avg_Loss: 304.9277 | ε: 0.050
+Ep 2930/3000 | Avg_Score:   1241 | Avg_Pieces: 200 | Avg_Lines: 66 | Avg_Loss: 235.7983 | ε: 0.050
+Ep 2940/3000 | Avg_Score:    365 | Avg_Pieces: 80 | Avg_Lines: 18 | Avg_Loss: 351.8097 | ε: 0.050
+Ep 2950/3000 | Avg_Score:    445 | Avg_Pieces: 92 | Avg_Lines: 23 | Avg_Loss: 459.2376 | ε: 0.050
+Ep 2960/3000 | Avg_Score:   1079 | Avg_Pieces: 172 | Avg_Lines: 55 | Avg_Loss: 634.1998 | ε: 0.050
+Ep 2970/3000 | Avg_Score:   1511 | Avg_Pieces: 238 | Avg_Lines: 81 | Avg_Loss: 291.0225 | ε: 0.050
+New best score: 6787 - saving model!
+  (đã xóa bản cũ: tetris_best_5530.pth)
+Ep 2980/3000 | Avg_Score:   1457 | Avg_Pieces: 234 | Avg_Lines: 80 | Avg_Loss: 247.3428 | ε: 0.050
+Ep 2990/3000 | Avg_Score:   1062 | Avg_Pieces: 168 | Avg_Lines: 54 | Avg_Loss: 314.6402 | ε: 0.050
+Ep 3000/3000 | Avg_Score:    777 | Avg_Pieces: 136 | Avg_Lines: 40 | Avg_Loss: 400.6757 | ε: 0.050

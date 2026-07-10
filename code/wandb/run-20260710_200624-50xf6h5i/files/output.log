@@ -1,0 +1,22 @@
+
+======================================================================
+ TRAINING DQN AGENT
+======================================================================
+Device: cpu
+Episodes: 3000
+Batch size: 512
+Learning rate: 0.001
+Gamma: 0.99
+Initial epsilon: 1.0
+Final epsilon: 0.05
+Epsilon decay episodes: 2800.0
+Replay buffer size: 3000
+Max episode pieces: 100000
+======================================================================
+Traceback (most recent call last):
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 346, in <module>
+    agent.train()
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 245, in train
+    print(f"Ep {ep + 1:4d}/{int(self.args.num_epochs)} | "
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'

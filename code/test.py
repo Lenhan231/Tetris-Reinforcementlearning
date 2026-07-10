@@ -271,7 +271,7 @@ class DQNTester:
             pieces_list.append(pieces)
             lines_list.append(lines)
             steps_list.append(steps)
-            print(f"Game {i+1:2d}: Score {score:7.0f} | Pieces {pieces:3d} | Lines {lines:3d} | Steps {steps:4d}")
+            print(f"Game {i+1:2d}: Score {score:7.0f} | Pieces {pieces:3d} | Lines {lines:3d}")
 
         print(f"\n{'=' * 60}\n📊 STATISTICS\n{'=' * 60}\n")
 
@@ -283,16 +283,8 @@ class DQNTester:
         stats(scores, "Score")
         stats(pieces_list, "Pieces")
         stats(lines_list, "Lines")
-        stats(steps_list, "Steps")
 
         avg_lines = np.mean(lines_list)
-        print(f"\n{'Performance':─^40}")
-        if avg_lines > 100:
-            print("🌟 Excellent (avg lines > 100)!")
-        elif avg_lines > 50:
-            print("👍 Good (avg lines > 50)!")
-        else:
-            print("⚠️ Can be improved (avg lines ≤ 50)")
 
 
 def main():

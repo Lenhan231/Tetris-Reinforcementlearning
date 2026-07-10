@@ -201,75 +201,60 @@ class DQNAgent:
 
             score, pieces, lines, total_reward = self.play_episode()
 
-            # save model nếu score tốt hơn best_score trước đó
+            # Save highest
             if score > self.best_score:
                 self.best_score = score
-                if score >= self.args.min_save_score:
-                    print(f"New best score: {score:.0f} - saving model!")
-                    scored_path = os.path.join(self.args.save_path, f"tetris_best_{score:.0f}.pth")
-                    torch.save(self.q_net.state_dict(), scored_path)
-                    # Xóa bản best yếu hơn mà run này đã lưu trước đó
-                    if self.last_best_path and self.last_best_path != scored_path \
-                            and os.path.exists(self.last_best_path):
-                        os.remove(self.last_best_path)
-                        print(f"  (đã xóa bản cũ: {os.path.basename(self.last_best_path)})")
-                    self.last_best_path = scored_path
-                else:
-                    print(f"New best score: {score:.0f} (< {self.args.min_save_score:.0f}, chưa lưu file)")
+                print(f"New best score: {score:.0f} - saving model!")
+                scored_path = os.path.join(self.args.save_path, f"tetris_best_{score:.0f}.pth")
+                torch.save(self.q_net.state_dict(), scored_path)
+                if self.last_best_path and self.last_best_path != scored_path \
+                        and os.path.exists(self.last_best_path):
+                    os.remove(self.last_best_path)
+                    print(f"  (đã xóa bản cũ: {os.path.basename(self.last_best_path)})")
+                self.last_best_path = scored_path
 
-            # Warm-up: chờ đủ 3000 samples (cap 3000 để buffer không quá nhỏ, tránh catastrophic forgetting
-            # không làm training bắt đầu trễ cả trăm episodes).
+            # After 3000 pieces, the agent has enough experience to start training
             if len(self.memory) > min(3000, self.args.memory_size / 10):
+                # update target network
+                if (ep + 1) % self.args.target_update == 0:
+                    self.target_net.load_state_dict(self.q_net.state_dict())
+                # loss collection for logging
                 loss = self.train_step()
                 self.epoch_losses.append(loss)
-                self.total_loss += loss
-                self.loss_count += 1
             else:
                 self.epoch_losses.append(0.0)
-
-            # Update target network after every N episodes (default: 100)
-            if (ep + 1) % self.args.target_update == 0:
-                self.target_net.load_state_dict(self.q_net.state_dict())
-
-    # ----------- Just log notthing more ----------------    
-            # Collect metrics
+            # metrics collection for logging
             self.epoch_scores.append(score)
             self.epoch_pieces.append(pieces)
             self.epoch_lines.append(lines)
             self.epoch_rewards.append(total_reward)
-
-            # Log progress (mỗi 10 episodes)
-            if (ep + 1) % 10 == 0:
-                avg_loss = (self.total_loss / self.loss_count) if self.loss_count > 0 else 0
-                eps = self._get_epsilon()
-                print(f"Ep {ep + 1:4d}/{self.args.num_epochs} | "
-                      f"Score: {score:6.0f} | "
-                      f"Pieces: {pieces:3d} | "
-                      f"Lines: {lines:3d} | "
-                      f"Loss: {avg_loss:.4f} | "
-                      f"ε: {eps:.3f}")
-                self.total_loss = 0.0
-                self.loss_count = 0
-
-            # Log to WandB (mỗi 100 episodes)
+              
+            # Log metrics to WandB every log_interval episodes
             if (ep + 1) % self.args.log_interval == 0 and self.use_wandb:
-                avg_score = np.mean(self.epoch_scores[-self.args.log_interval:])
-                avg_pieces = np.mean(self.epoch_pieces[-self.args.log_interval:])
-                avg_lines = np.mean(self.epoch_lines[-self.args.log_interval:])
-                avg_rewards = np.mean(self.epoch_rewards[-self.args.log_interval:])
-                avg_loss = np.mean(self.epoch_losses[-self.args.log_interval:])
+                window = slice(-self.args.log_interval, None)
+                interval = self.args.log_interval
 
-                wandb.log({
+                metrics = {
                     "epoch": ep + 1,
-                    "game/avg_score_" + str(self.args.log_interval): avg_score,
-                    "game/best_lines_" + str(self.args.log_interval): max(self.epoch_lines[-self.args.log_interval:]),
-                    "game/avg_pieces_" + str(self.args.log_interval): avg_pieces,
-                    "game/avg_lines_" + str(self.args.log_interval): avg_lines,
-                    "game/avg_rewards_" + str(self.args.log_interval): avg_rewards,
-                    "model/loss": avg_loss,
+                    f"game/avg_score_{interval}": np.mean(self.epoch_scores[window]),
+                    f"game/best_lines_{interval}": max(self.epoch_lines[window]),
+                    f"game/avg_pieces_{interval}": np.mean(self.epoch_pieces[window]),
+                    f"game/avg_lines_{interval}": np.mean(self.epoch_lines[window]),
+                    f"game/avg_rewards_{interval}": np.mean(self.epoch_rewards[window]),
+                    "model/loss": np.mean(self.epoch_losses[window]),
                     "model/epsilon": self._get_epsilon(),
-                })
+                }
 
+                print(
+                    f"Ep {ep + 1:4d}/{self.args.num_epochs} | "
+                    f"Score: {metrics[f'game/avg_score_{interval}']:.2f} | "
+                    f"Pieces: {metrics[f'game/avg_pieces_{interval}']:.2f} | "
+                    f"Lines: {metrics[f'game/avg_lines_{interval}']:.2f} | "
+                    f"Loss: {metrics['model/loss']:.4f} | "
+                    f"ε: {metrics['model/epsilon']:.3f}"
+                )
+
+                wandb.log(metrics)
         return self.q_net
 
 
@@ -306,11 +291,11 @@ def get_args():
                         help="Episodes to update target network (default: 10)")
 
     # Memory & Save settings
-    parser.add_argument("--memory_size", type=int, default=100000,
-                        help="Replay buffer size (default: 100000 — buffer to để "
+    parser.add_argument("--memory_size", type=int, default=3000,
+                        help="Replay buffer size"
                              "1 ván dài không chiếm quá vài %% buffer, giảm catastrophic forgetting)")
-    parser.add_argument("--max_episode_pieces", type=int, default=2000,
-                        help="Cap số khối mỗi episode lúc TRAIN (default: 2000; 0 = không cap). "
+    parser.add_argument("--max_episode_pieces", type=int, default=100000,
+                        help="Cap số khối mỗi episode lúc TRAIN (default: 100000; 0 = không cap). "
                              "Tránh 1 ván siêu dài flood replay buffer")
     parser.add_argument("--save_interval", type=int, default=100,
                         help="Save model every N episodes (default: 100)")
