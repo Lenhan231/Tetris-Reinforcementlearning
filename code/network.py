@@ -3,16 +3,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 class DeepQNetwork(nn.Module):
-    """Deep Q-Network: maps game state features to Q-value estimate.
-
-    Architecture: input_size → hidden1 → hidden2 → 1 (Q-value)
-    Default: 4 → 64 → 64 → 1
-    """
-    def __init__(self, input_size=4, hidden1_size=64, hidden2_size=64, output_size=1):
+    def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(input_size, hidden1_size)
-        self.fc2 = nn.Linear(hidden1_size, hidden2_size)
-        self.fc3 = nn.Linear(hidden2_size, output_size)
+        self.fc1 = nn.Linear(4, 64)
+        self.fc2 = nn.Linear(64, 64)
+        self.fc3 = nn.Linear(64, 1)
         self._init_weights()
 
     def _init_weights(self):

@@ -149,17 +149,13 @@ class DQNAgent:
         total_reward = 0.0
 
         # End the episode early to limit extremely long games.
-        while not self.env.game_over:
-            if self.env.tetrominoes >= self.args.max_episode_pieces:
-                break
+        while not self.env.game_over and self.env.tetrominoes < self.args.max_episode_pieces:
 
             if self.render_enabled:
                 self.env.render()
-                
+
             action = self.select_action()
             reward, done, next_state = self.env.step(action)
-
-            # Reward shaping: penalize increases in board holes, bumpiness, and height.
             reward -= self.args.shape_holes * (next_state[1] - state[1])
             reward -= self.args.shape_bump * (next_state[2] - state[2])
             reward -= self.args.shape_height * (next_state[3] - state[3])
@@ -170,9 +166,6 @@ class DQNAgent:
 
             state = next_state
 
-        # Only collect gameplay here. Network updates are performed separately
-        # during training so the saved "best" checkpoint matches the weights
-        # that actually achieved the best score.
         return (
             self.env.score,
             self.env.tetrominoes,
