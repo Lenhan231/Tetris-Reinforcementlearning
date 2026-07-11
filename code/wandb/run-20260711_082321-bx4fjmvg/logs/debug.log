@@ -1,0 +1,9 @@
+2026-07-11 08:23:21,333 INFO    MainThread:26576 [wandb_setup.py:_flush():81] Current SDK version is 0.27.0
+2026-07-11 08:23:21,334 INFO    MainThread:26576 [wandb_setup.py:_flush():81] Configure stats pid to 26576
+2026-07-11 08:23:21,334 INFO    MainThread:26576 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-07-11 08:23:21,335 INFO    MainThread:26576 [wandb_init.py:setup_run_log_directory():723] Logging user logs to C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\wandb\run-20260711_082321-bx4fjmvg\logs\debug.log
+2026-07-11 08:23:21,335 INFO    MainThread:26576 [wandb_init.py:setup_run_log_directory():724] Logging internal logs to C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\wandb\run-20260711_082321-bx4fjmvg\logs\debug-internal.log
+2026-07-11 08:23:21,336 INFO    MainThread:26576 [wandb_init.py:init():851] calling init triggers
+2026-07-11 08:23:21,336 INFO    MainThread:26576 [wandb_init.py:init():856] wandb.init called with sweep_config: {}
+config: {'num_epochs': 3000, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.99, 'initial_eps': 1.0, 'final_eps': 0.001, 'decay_epochs': 2000.0, '_wandb': {}}
+2026-07-11 08:23:21,336 INFO    MainThread:26576 [wandb_init.py:init():899] starting backend

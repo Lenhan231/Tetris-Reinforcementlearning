@@ -16,13 +16,6 @@ class WandBTracker:
                 project="tetris-dqn",
                 config=self._make_config_dict()
             )
-        
-        # Metrics storage
-        self.epoch_scores: List[float] = []
-        self.epoch_pieces: List[int] = []
-        self.epoch_lines: List[int] = []
-        self.epoch_losses: List[float] = []
-        self.epoch_rewards: List[float] = []
     
     def _make_config_dict(self) -> dict:
         """Convert config to WandB dict."""

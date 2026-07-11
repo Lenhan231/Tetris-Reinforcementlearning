@@ -17,3 +17,23 @@ config: {'num_epochs': 3000, 'batch_size': 512, 'lr': 0.001, 'gamma': 0.99, 'ini
 2026-07-10 21:39:51,538 INFO    MainThread:5012 [wandb_run.py:_redirect():2428] Wrapping output streams.
 2026-07-10 21:39:51,539 INFO    MainThread:5012 [wandb_run.py:_redirect():2451] Redirects installed.
 2026-07-10 21:39:51,544 INFO    MainThread:5012 [wandb_init.py:init():1095] run started, returning control to user process
+2026-07-10 22:32:43,725 INFO    wandb-AsyncioManager-main:5012 [service_client.py:_forward_responses():122] Reached EOF.
+2026-07-10 22:32:43,733 INFO    wandb-AsyncioManager-main:5012 [mailbox.py:close():154] Closing mailbox, abandoning 1 handles.
+2026-07-10 22:32:45,122 ERROR   wandb-AsyncioManager-main:5012 [asyncio_manager.py:fn_wrap_exceptions():184] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 182, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\run_messages.py", line 105, in loop
+    await self._poll_and_print(timeout=None)
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\run_messages.py", line 133, in _poll_and_print
+    handle = await self._interface.deliver_async(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\interface\interface_sock.py", line 58, in deliver_async
+    handle = await self._client.deliver(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 57, in deliver
+    handle = self._mailbox.require_response(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\mailbox\mailbox.py", line 89, in require_response
+    raise MailboxClosedError()
+wandb.sdk.mailbox.mailbox.MailboxClosedError

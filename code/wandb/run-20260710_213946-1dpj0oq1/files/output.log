@@ -99,3 +99,6 @@ New best score: 603204 - saving model!
 New best score: 749562 - saving model!
   (đã xóa bản cũ: tetris_best_603204.pth)
 Ep 2700/3000 | Avg_Score: 41376.01 | Avg_Pieces: 4743.56 | Avg_Lines: 1883.74 | Loss: 1228.3515 | ε: 0.001
+Ep 2800/3000 | Avg_Score: 19265.63 | Avg_Pieces: 2218.96 | Avg_Lines: 873.81 | Loss: 1161.5544 | ε: 0.001
+Ep 2900/3000 | Avg_Score: 5882.76 | Avg_Pieces: 647.39 | Avg_Lines: 244.48 | Loss: 1418.7149 | ε: 0.001
+Ep 3000/3000 | Avg_Score: 4471.83 | Avg_Pieces: 496.58 | Avg_Lines: 184.47 | Loss: 1427.4494 | ε: 0.001

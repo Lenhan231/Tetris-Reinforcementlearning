@@ -1,0 +1,65 @@
+
+======================================================================
+ TRAINING DQN AGENT
+======================================================================
+Device: cpu
+Episodes: 3000
+Batch size: 64
+Learning rate: 0.001
+Gamma: 0.99
+Initial epsilon: 1.0
+Final epsilon: 0.001
+Epsilon decay episodes: 2000.0
+Target update interval: 10
+Replay buffer size: 3000
+Max episode pieces: 100000
+======================================================================
+Ep  100/3000 | Avg_Score: 0.00 | Avg_Pieces: 18.36 | Avg_Lines: 0.00 | Loss: 441.6972 | ε: 0.951
+New best score: 11 | lines cleared: 1 | pieces: 18 | tetris_best_11.pth
+Ep  200/3000 | Avg_Score: 0.11 | Avg_Pieces: 18.23 | Avg_Lines: 0.01 | Loss: 1560.8448 | ε: 0.901
+Ep  300/3000 | Avg_Score: 0.22 | Avg_Pieces: 18.15 | Avg_Lines: 0.02 | Loss: 2448.1436 | ε: 0.851
+Ep  400/3000 | Avg_Score: 0.00 | Avg_Pieces: 17.40 | Avg_Lines: 0.00 | Loss: 2550.1881 | ε: 0.801
+Ep  500/3000 | Avg_Score: 0.11 | Avg_Pieces: 17.34 | Avg_Lines: 0.01 | Loss: 2278.1544 | ε: 0.751
+Ep  600/3000 | Avg_Score: 0.33 | Avg_Pieces: 17.60 | Avg_Lines: 0.03 | Loss: 2140.9717 | ε: 0.701
+Ep  700/3000 | Avg_Score: 0.11 | Avg_Pieces: 17.40 | Avg_Lines: 0.01 | Loss: 2341.5637 | ε: 0.651
+Ep  800/3000 | Avg_Score: 0.11 | Avg_Pieces: 18.01 | Avg_Lines: 0.01 | Loss: 1997.3843 | ε: 0.601
+Ep  900/3000 | Avg_Score: 0.33 | Avg_Pieces: 21.16 | Avg_Lines: 0.03 | Loss: 2641.0329 | ε: 0.551
+Ep 1000/3000 | Avg_Score: 0.00 | Avg_Pieces: 18.19 | Avg_Lines: 0.00 | Loss: 3228.7092 | ε: 0.501
+Ep 1100/3000 | Avg_Score: 0.55 | Avg_Pieces: 20.96 | Avg_Lines: 0.05 | Loss: 1685.6734 | ε: 0.451
+New best score: 22 | lines cleared: 2 | pieces: 37 | tetris_best_22.pth
+New best score: 52 | lines cleared: 3 | pieces: 40 | tetris_best_52.pth
+Ep 1200/3000 | Avg_Score: 2.14 | Avg_Pieces: 25.37 | Avg_Lines: 0.16 | Loss: 1173.4239 | ε: 0.401
+New best score: 102 | lines cleared: 4 | pieces: 43 | tetris_best_102.pth
+Ep 1300/3000 | Avg_Score: 3.68 | Avg_Pieces: 27.55 | Avg_Lines: 0.23 | Loss: 659.8733 | ε: 0.351
+New best score: 113 | lines cleared: 5 | pieces: 43 | tetris_best_113.pth
+Ep 1400/3000 | Avg_Score: 9.04 | Avg_Pieces: 31.55 | Avg_Lines: 0.70 | Loss: 328.5553 | ε: 0.301
+New best score: 118 | lines cleared: 9 | pieces: 62 | tetris_best_118.pth
+New best score: 159 | lines cleared: 11 | pieces: 64 | tetris_best_159.pth
+Ep 1500/3000 | Avg_Score: 13.51 | Avg_Pieces: 32.40 | Avg_Lines: 1.02 | Loss: 298.3197 | ε: 0.251
+New best score: 168 | lines cleared: 10 | pieces: 60 | tetris_best_168.pth
+New best score: 277 | lines cleared: 20 | pieces: 82 | tetris_best_277.pth
+New best score: 304 | lines cleared: 19 | pieces: 79 | tetris_best_304.pth
+New best score: 324 | lines cleared: 19 | pieces: 82 | tetris_best_324.pth
+New best score: 479 | lines cleared: 26 | pieces: 97 | tetris_best_479.pth
+New best score: 548 | lines cleared: 27 | pieces: 102 | tetris_best_548.pth
+Ep 1600/3000 | Avg_Score: 92.60 | Avg_Pieces: 47.82 | Avg_Lines: 6.14 | Loss: 182.0935 | ε: 0.201
+New best score: 851 | lines cleared: 46 | pieces: 151 | tetris_best_851.pth
+New best score: 973 | lines cleared: 50 | pieces: 158 | tetris_best_973.pth
+Ep 1700/3000 | Avg_Score: 142.51 | Avg_Pieces: 55.54 | Avg_Lines: 8.99 | Loss: 206.6140 | ε: 0.151
+New best score: 1042 | lines cleared: 60 | pieces: 184 | tetris_best_1042.pth
+Ep 1800/3000 | Avg_Score: 173.81 | Avg_Pieces: 60.43 | Avg_Lines: 10.94 | Loss: 430.6280 | ε: 0.101
+New best score: 1161 | lines cleared: 62 | pieces: 187 | tetris_best_1161.pth
+New best score: 1189 | lines cleared: 96 | pieces: 276 | tetris_best_1189.pth
+New best score: 1294 | lines cleared: 95 | pieces: 272 | tetris_best_1294.pth
+New best score: 1389 | lines cleared: 86 | pieces: 241 | tetris_best_1389.pth
+New best score: 1484 | lines cleared: 102 | pieces: 278 | tetris_best_1484.pth
+New best score: 2252 | lines cleared: 142 | pieces: 392 | tetris_best_2252.pth
+New best score: 3841 | lines cleared: 190 | pieces: 500 | tetris_best_3841.pth
+Ep 1900/3000 | Avg_Score: 553.40 | Avg_Pieces: 119.18 | Avg_Lines: 34.15 | Loss: 378.0346 | ε: 0.051
+New best score: 6947 | lines cleared: 376 | pieces: 972 | tetris_best_6947.pth
+New best score: 10575 | lines cleared: 556 | pieces: 1424 | tetris_best_10575.pth
+Ep 2000/3000 | Avg_Score: 619.45 | Avg_Pieces: 113.88 | Avg_Lines: 32.98 | Loss: 555.0704 | ε: 0.001
+New best score: 47420 | lines cleared: 2852 | pieces: 7145 | tetris_best_47420.pth
+New best score: 59147 | lines cleared: 3660 | pieces: 9179 | tetris_best_59147.pth
+New best score: 87520 | lines cleared: 4868 | pieces: 12181 | tetris_best_87520.pth
+Ep 2100/3000 | Avg_Score: 6089.93 | Avg_Pieces: 892.17 | Avg_Lines: 344.11 | Loss: 741.0036 | ε: 0.001

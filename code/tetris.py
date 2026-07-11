@@ -41,7 +41,7 @@ class TetrisGame:
         if self._check_collision(self.current_piece, self.piece_x, self.piece_y):
             self.game_over = True
 
-    def _rotate_90(self, piece):
+    def _rotate_piece(self, piece):
         num_rows = len(piece)
         num_cols = len(piece[0])
         rotated = []
@@ -143,52 +143,45 @@ class TetrisGame:
 
         x_pos, num_rotations = action
 
-        # 1. Xoay piece (mod 4 vì 4 rotations)
+        # 1. Roation
         piece = [row[:] for row in self.current_piece]
-        for _ in range(num_rotations % 4):
-            piece = self._rotate_90(piece)
+        for _ in range(num_rotations):
+            piece = self._rotate_piece(piece)
 
-        # 2. Đặt vị trí x (clamp vào [0, width - piece_width])
+        # 2. X_pos
         self.piece_x = max(0, min(x_pos, self.width - len(piece[0])))
         self.current_piece = piece
 
-        # 3. Drop piece: rơi từng hàng một, dừng ở hàng cuối cùng không collision
-        # (piece_y = -1 nếu không fit ngay từ đầu → game over ở bước 4)
+        # 3. Hard Drop piece
         self.piece_y = -1
         while not self._check_collision(self.current_piece, self.piece_x, self.piece_y + 1):
             self.piece_y += 1
             if on_drop_step is not None:
-                on_drop_step()  # render 1 frame ở vị trí hiện tại (soft drop)
+                on_drop_step() 
 
-        # 4. Lock piece lên board (chỉ nếu piece_y >= 0, tức piece fit trên board)
+        # 4. Lock piece
         if self.piece_y >= 0:
             self._place_piece()
             self.tetrominoes += 1
         else:
-            # Piece không fit ở bất kỳ vị trí nào → Game Over
             self.game_over = True
 
-        # 5. Xóa hàng đầy
+        # 5. Clear full lines
         lines_cleared, points = self._clear_full_lines()
         self.score += points
         self.cleared_lines += lines_cleared
 
-        reward = 1 + (lines_cleared ** 2) * self.width
+        score = 1 + (lines_cleared ** 2) * self.width
 
         # 6. Spawn piece mới
         self._spawn_new_piece()
 
-        # 7. Penalty nếu game over
-        if self.game_over:
-            reward -= 2
-
-        return reward, self.game_over, self._get_state_features(lines_cleared)
+        return score, self.game_over, self._get_state_features(lines_cleared)
 
     def get_next_states(self):
         states = {}
         piece = [row[:] for row in self.current_piece]
 
-        # giam so lan xoay
         piece_idx = self.current_piece_idx
         if piece_idx == 0:  
             max_rotations = 1
@@ -196,8 +189,8 @@ class TetrisGame:
             max_rotations = 2
         else: 
             max_rotations = 4
-
-        for rotation in range(max_rotations): #rotation
+    
+        for rotation in range(max_rotations):
             max_x = self.width - len(piece[0])
             for x in range(max_x + 1):
                 # Simulate: drop piece xuống (tìm final y)  
@@ -222,18 +215,14 @@ class TetrisGame:
                 for _ in range(len(full_lines)):
                     temp_board.insert(0, [0] * self.width)
 
-                # Extract features từ board copy (không thay đổi board thật)
-                # Truyền số hàng vừa xóa trong simulation làm feature "lines"
                 original_board = self.board
                 self.board = temp_board
                 features = self._get_state_features(len(full_lines))
                 self.board = original_board
 
-                # Lưu vào dict
                 states[(x, rotation)] = features
 
-            # Xoay piece cho iteration tiếp theo
-            piece = self._rotate_90(piece)
+            piece = self._rotate_piece(piece)
 
         return states
 

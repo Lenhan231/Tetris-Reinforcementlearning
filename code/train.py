@@ -155,7 +155,11 @@ class DQNAgent:
                 self.env.render()
 
             action = self.select_action()
-            reward, done, next_state = self.env.step(action)
+            score, done, next_state = self.env.step(action)
+            
+            reward = score
+            if done:
+                reward -= 2
             reward -= self.args.shape_holes * (next_state[1] - state[1])
             reward -= self.args.shape_bump * (next_state[2] - state[2])
             reward -= self.args.shape_height * (next_state[3] - state[3])
@@ -191,13 +195,12 @@ class DQNAgent:
             # Save highest
             if score > self.best_score:
                 self.best_score = score
-                print(f"New best score: {score:.0f} - saving model!")
+                print(f"New best score: {score:.0f} | lines cleared: {lines} | pieces: {pieces} | tetris_best_{score:.0f}.pth")
                 scored_path = os.path.join(self.args.save_path, f"tetris_best_{score:.0f}.pth")
                 torch.save(self.q_net.state_dict(), scored_path)
                 if self.last_best_path and self.last_best_path != scored_path \
                         and os.path.exists(self.last_best_path):
                     os.remove(self.last_best_path)
-                    print(f"  (đã xóa bản cũ: {os.path.basename(self.last_best_path)})")
                 self.last_best_path = scored_path
 
             # After 3000 pieces, the agent has enough experience to start training
@@ -252,64 +255,36 @@ def get_args():
     parser = argparse.ArgumentParser(description="Train DQN for Tetris")
 
     # Game settings
-    parser.add_argument("--width", type=int, default=10,
-                        help="Board width (default: 10)")
-    parser.add_argument("--height", type=int, default=20,
-                        help="Board height (default: 20)")
+    parser.add_argument("--width", type=int, default=10)
+    parser.add_argument("--height", type=int, default=20)
 
     # Training settings
-    parser.add_argument("--num_epochs", type=int, default=3000,
-                        help="Number of episodes to train (default: 3000; "
-                             "cần > decay_epochs=2000 để agent có giai đoạn exploit)")
-    parser.add_argument("--batch_size", type=int, default=512,
-                        help="Batch size for training (default: 512)")
-    parser.add_argument("--lr", type=float, default=1e-3,
-                        help="Learning rate (default: 0.001)")
+    parser.add_argument("--num_epochs", type=int, default=3000)
+    parser.add_argument("--batch_size", type=int, default=512)
+    parser.add_argument("--lr", type=float, default=1e-3)
 
     # Q-Learning hyperparameters
-    parser.add_argument("--gamma", type=float, default=0.99,
-                        help="Discount factor (default: 0.99)")
-    parser.add_argument("--initial_eps", type=float, default=1.0,
-                        help="Initial epsilon for exploration (default: 1.0)")
-    parser.add_argument("--final_eps", type=float, default=0.01,
-                        help="Final epsilon for exploitation (default: 0.01 — giữ 1%% "
-                             "nước random để buffer luôn có data đa dạng, policy sụp thì hồi nhanh hơn)")
-    parser.add_argument("--decay_epochs", type=float, default=2000,
-                        help="Episodes to decay epsilon (default: 2000)")
-    parser.add_argument("--target_update", type=int, default=10,
-                        help="Episodes to update target network (default: 10)")
+    parser.add_argument("--gamma", type=float, default=0.99)
+    parser.add_argument("--initial_eps", type=float, default=1.0)
+    parser.add_argument("--final_eps", type=float, default=0.001)
+    parser.add_argument("--decay_epochs", type=float, default=2000)
+    parser.add_argument("--target_update", type=int, default=10)
 
-    # Memory & Save settings
-    parser.add_argument("--memory_size", type=int, default=3000,
-                        help="Replay buffer size"
-                             "1 ván dài không chiếm quá vài %% buffer, giảm catastrophic forgetting)")
-    parser.add_argument("--max_episode_pieces", type=int, default=100000,
-                        help="Cap số khối mỗi episode lúc TRAIN (default: 100000; 0 = không cap). "
-                             "Tránh 1 ván siêu dài flood replay buffer")
-    parser.add_argument("--save_interval", type=int, default=100,
-                        help="Save model every N episodes (default: 100)")
-    parser.add_argument("--save_path", type=str, default="models",
-                        help="Path to save models (default: models/)")
-    parser.add_argument("--min_save_score", type=float, default=1000,
-                        help="Chỉ lưu best model khi score >= ngưỡng này "
-                             "(default: 1000; tránh lưu các best rác đầu run)")
-
+    # Replay buffer 
+    parser.add_argument("--memory_size", type=int, default=3000)
+    
     # Reward shaping (phạt theo DELTA feature sau mỗi nước, 0 = tắt)
-    parser.add_argument("--shape_holes", type=float, default=-1.0,
-                        help="Phạt mỗi hole MỚI tạo ra (default: -1.0)")
-    parser.add_argument("--shape_bump", type=float, default=-1.0,
-                        help="Phạt mỗi đơn vị bumpiness TĂNG thêm (default: -1.0)")
-    parser.add_argument("--shape_height", type=float, default=-1.0,
-                        help="Phạt mỗi đơn vị height TĂNG thêm (default: -1.0)")
+    parser.add_argument("--shape_holes", type=float, default=-1.0)
+    parser.add_argument("--shape_bump", type=float, default=-1.0)
+    parser.add_argument("--shape_height", type=float, default=-1.0)
 
     # Visualization & Tracking
-    parser.add_argument("--render", action="store_true",
-                        help="Enable live rendering during training")
-    parser.add_argument("--wandb", action="store_true",
-                        help="Track metrics with Weights & Biases (install: pip install wandb)")
-    parser.add_argument("--log_interval", type=int, default=100,
-                    help="Log to WandB every N episodes (default: 100)")
-
+    parser.add_argument("--log_interval", type=int, default=100)
+    parser.add_argument("--max_episode_pieces", type=int, default=100000)
+    parser.add_argument("--save_interval", type=int, default=100)
+    parser.add_argument("--save_path", type=str, default="models")
+    parser.add_argument("--render", action="store_true")
+    parser.add_argument("--wandb", action="store_true")
 
     return parser.parse_args()
 
@@ -328,6 +303,7 @@ if __name__ == "__main__":
     print(f"Initial epsilon: {agent.args.initial_eps}")
     print(f"Final epsilon: {agent.args.final_eps}")
     print(f"Epsilon decay episodes: {agent.args.decay_epochs}")
+    print(f"Target update interval: {agent.args.target_update}")
     print(f"Replay buffer size: {agent.args.memory_size}")
     print(f"Max episode pieces: {agent.args.max_episode_pieces}")
     print("=" * 70)
