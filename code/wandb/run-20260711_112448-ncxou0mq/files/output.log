@@ -1,0 +1,65 @@
+
+======================================================================
+ TRAINING DQN AGENT
+======================================================================
+Device: cpu
+Episodes: 3000
+Batch size: 64
+Learning rate: 0.001
+Gamma: 0.99
+Initial epsilon: 1.0
+Final epsilon: 0.001
+Epsilon decay episodes: 2000.0
+Target update interval: 10
+Replay buffer size: 3000
+Max episode pieces: 100000
+======================================================================
+New best score: 11 | lines cleared: 1 | pieces: 27 | tetris_best_11.pth
+Ep  100/3000 | Avg_Score: 0.11 | Avg_Pieces: 18.57 | Avg_Lines: 0.01 | Loss: 125.4281 | ε: 0.951
+Ep  200/3000 | Avg_Score: 0.00 | Avg_Pieces: 18.17 | Avg_Lines: 0.00 | Loss: 319.4264 | ε: 0.901
+Ep  300/3000 | Avg_Score: 0.22 | Avg_Pieces: 17.34 | Avg_Lines: 0.02 | Loss: 471.7690 | ε: 0.851
+Ep  400/3000 | Avg_Score: 0.11 | Avg_Pieces: 17.80 | Avg_Lines: 0.01 | Loss: 463.4925 | ε: 0.801
+Ep  500/3000 | Avg_Score: 0.22 | Avg_Pieces: 18.17 | Avg_Lines: 0.02 | Loss: 375.2009 | ε: 0.751
+Ep  600/3000 | Avg_Score: 0.33 | Avg_Pieces: 18.38 | Avg_Lines: 0.03 | Loss: 322.5153 | ε: 0.701
+Ep  700/3000 | Avg_Score: 0.11 | Avg_Pieces: 18.81 | Avg_Lines: 0.01 | Loss: 323.7154 | ε: 0.651
+Ep  800/3000 | Avg_Score: 0.22 | Avg_Pieces: 19.56 | Avg_Lines: 0.02 | Loss: 259.1022 | ε: 0.601
+New best score: 52 | lines cleared: 3 | pieces: 37 | tetris_best_52.pth
+Ep  900/3000 | Avg_Score: 1.51 | Avg_Pieces: 22.04 | Avg_Lines: 0.12 | Loss: 218.1510 | ε: 0.551
+Ep 1000/3000 | Avg_Score: 0.55 | Avg_Pieces: 19.37 | Avg_Lines: 0.05 | Loss: 216.1541 | ε: 0.501
+Ep 1100/3000 | Avg_Score: 2.20 | Avg_Pieces: 23.61 | Avg_Lines: 0.20 | Loss: 276.1819 | ε: 0.451
+New best score: 63 | lines cleared: 4 | pieces: 43 | tetris_best_63.pth
+Ep 1200/3000 | Avg_Score: 4.70 | Avg_Pieces: 27.83 | Avg_Lines: 0.41 | Loss: 216.0294 | ε: 0.401
+New best score: 66 | lines cleared: 6 | pieces: 43 | tetris_best_66.pth
+New best score: 102 | lines cleared: 4 | pieces: 37 | tetris_best_102.pth
+Ep 1300/3000 | Avg_Score: 12.12 | Avg_Pieces: 31.39 | Avg_Lines: 0.98 | Loss: 89.5536 | ε: 0.351
+New best score: 124 | lines cleared: 6 | pieces: 47 | tetris_best_124.pth
+New best score: 145 | lines cleared: 8 | pieces: 36 | tetris_best_145.pth
+Ep 1400/3000 | Avg_Score: 30.01 | Avg_Pieces: 32.98 | Avg_Lines: 2.19 | Loss: 73.1281 | ε: 0.301
+New best score: 351 | lines cleared: 18 | pieces: 84 | tetris_best_351.pth
+Ep 1500/3000 | Avg_Score: 61.17 | Avg_Pieces: 38.93 | Avg_Lines: 4.01 | Loss: 75.1875 | ε: 0.251
+New best score: 463 | lines cleared: 30 | pieces: 109 | tetris_best_463.pth
+Ep 1600/3000 | Avg_Score: 87.89 | Avg_Pieces: 45.89 | Avg_Lines: 5.92 | Loss: 108.0332 | ε: 0.201
+New best score: 701 | lines cleared: 41 | pieces: 138 | tetris_best_701.pth
+Ep 1700/3000 | Avg_Score: 72.15 | Avg_Pieces: 40.35 | Avg_Lines: 4.54 | Loss: 181.1772 | ε: 0.151
+New best score: 1034 | lines cleared: 68 | pieces: 209 | tetris_best_1034.pth
+New best score: 1642 | lines cleared: 95 | pieces: 274 | tetris_best_1642.pth
+Ep 1800/3000 | Avg_Score: 130.38 | Avg_Pieces: 53.34 | Avg_Lines: 8.14 | Loss: 263.3407 | ε: 0.101
+New best score: 1797 | lines cleared: 93 | pieces: 257 | tetris_best_1797.pth
+New best score: 2569 | lines cleared: 157 | pieces: 429 | tetris_best_2569.pth
+Ep 1900/3000 | Avg_Score: 346.81 | Avg_Pieces: 79.05 | Avg_Lines: 19.94 | Loss: 381.1921 | ε: 0.051
+New best score: 3158 | lines cleared: 159 | pieces: 434 | tetris_best_3158.pth
+New best score: 6048 | lines cleared: 310 | pieces: 798 | tetris_best_6048.pth
+New best score: 12061 | lines cleared: 671 | pieces: 1711 | tetris_best_12061.pth
+New best score: 19764 | lines cleared: 1056 | pieces: 2677 | tetris_best_19764.pth
+Ep 2000/3000 | Avg_Score: 1299.74 | Avg_Pieces: 202.63 | Avg_Lines: 67.62 | Loss: 335.6927 | ε: 0.001
+New best score: 22466 | lines cleared: 1638 | pieces: 4133 | tetris_best_22466.pth
+Ep 2100/3000 | Avg_Score: 680.39 | Avg_Pieces: 152.00 | Avg_Lines: 46.54 | Loss: 469.1608 | ε: 0.001
+Ep 2200/3000 | Avg_Score: 7.26 | Avg_Pieces: 36.41 | Avg_Lines: 0.66 | Loss: 86.4805 | ε: 0.001
+Ep 2300/3000 | Avg_Score: 3.19 | Avg_Pieces: 34.57 | Avg_Lines: 0.29 | Loss: 43.0527 | ε: 0.001
+Ep 2400/3000 | Avg_Score: 1.32 | Avg_Pieces: 32.31 | Avg_Lines: 0.12 | Loss: 22.4124 | ε: 0.001
+Ep 2500/3000 | Avg_Score: 0.55 | Avg_Pieces: 32.34 | Avg_Lines: 0.05 | Loss: 13.4396 | ε: 0.001
+Ep 2600/3000 | Avg_Score: 2.20 | Avg_Pieces: 35.00 | Avg_Lines: 0.20 | Loss: 6.5856 | ε: 0.001
+Ep 2700/3000 | Avg_Score: 2.39 | Avg_Pieces: 34.37 | Avg_Lines: 0.20 | Loss: 4.2468 | ε: 0.001
+Ep 2800/3000 | Avg_Score: 2.64 | Avg_Pieces: 35.11 | Avg_Lines: 0.24 | Loss: 3.6014 | ε: 0.001
+Ep 2900/3000 | Avg_Score: 3.41 | Avg_Pieces: 35.17 | Avg_Lines: 0.31 | Loss: 3.3618 | ε: 0.001
+Ep 3000/3000 | Avg_Score: 4.95 | Avg_Pieces: 35.96 | Avg_Lines: 0.45 | Loss: 2.9804 | ε: 0.001

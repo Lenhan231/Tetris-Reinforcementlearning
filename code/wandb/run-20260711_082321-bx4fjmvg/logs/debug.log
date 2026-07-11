@@ -7,3 +7,30 @@
 2026-07-11 08:23:21,336 INFO    MainThread:26576 [wandb_init.py:init():856] wandb.init called with sweep_config: {}
 config: {'num_epochs': 3000, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.99, 'initial_eps': 1.0, 'final_eps': 0.001, 'decay_epochs': 2000.0, '_wandb': {}}
 2026-07-11 08:23:21,336 INFO    MainThread:26576 [wandb_init.py:init():899] starting backend
+2026-07-11 08:23:23,936 INFO    MainThread:26576 [wandb_init.py:init():914] sending inform_init request
+2026-07-11 08:23:25,502 INFO    MainThread:26576 [wandb_init.py:init():919] backend started and connected
+2026-07-11 08:23:25,547 INFO    MainThread:26576 [wandb_init.py:init():989] updated telemetry
+2026-07-11 08:23:25,597 INFO    MainThread:26576 [wandb_init.py:init():1012] communicating run to backend with 90.0 second timeout
+2026-07-11 08:23:27,990 INFO    MainThread:26576 [wandb_init.py:init():1057] starting run threads in backend
+2026-07-11 08:23:28,319 INFO    MainThread:26576 [wandb_run.py:_console_start():2509] atexit reg
+2026-07-11 08:23:28,320 INFO    MainThread:26576 [wandb_run.py:_redirect():2359] redirect: wrap_raw
+2026-07-11 08:23:28,320 INFO    MainThread:26576 [wandb_run.py:_redirect():2428] Wrapping output streams.
+2026-07-11 08:23:28,320 INFO    MainThread:26576 [wandb_run.py:_redirect():2451] Redirects installed.
+2026-07-11 08:23:28,325 INFO    MainThread:26576 [wandb_init.py:init():1095] run started, returning control to user process
+2026-07-11 09:23:35,984 INFO    wandb-AsyncioManager-main:26576 [service_client.py:_forward_responses():122] Reached EOF.
+2026-07-11 09:23:35,993 INFO    wandb-AsyncioManager-main:26576 [mailbox.py:close():154] Closing mailbox, abandoning 1 handles.
+2026-07-11 09:23:40,183 ERROR   wandb-AsyncioManager-main:26576 [asyncio_manager.py:fn_wrap_exceptions():184] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 182, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\asyncio\streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\asyncio\streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

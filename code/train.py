@@ -125,9 +125,8 @@ class DQNAgent:
         self.target_net.eval()
         with torch.no_grad():
             q_next = self.target_net(s_next)
-
+        
         # Bellman: Q_target = reward + γ * max_Q(next_state) * (1 - done)
-        # Nếu done=True: Q_target = reward (không có future)
         q_target = r + (1 - d.float().unsqueeze(1)) * self.args.gamma * q_next
 
         # 5. Loss & backprop
@@ -149,7 +148,7 @@ class DQNAgent:
         total_reward = 0.0
 
         # End the episode early to limit extremely long games.
-        while not self.env.game_over and self.env.tetrominoes < self.args.max_episode_pieces:
+        while not self.env.game_over and self.env.cleared_lines < self.args.max_episode_lines:
 
             if self.render_enabled:
                 self.env.render()
@@ -198,6 +197,7 @@ class DQNAgent:
                 print(f"New best score: {score:.0f} | lines cleared: {lines} | pieces: {pieces} | tetris_best_{score:.0f}.pth")
                 scored_path = os.path.join(self.args.save_path, f"tetris_best_{score:.0f}.pth")
                 torch.save(self.q_net.state_dict(), scored_path)
+                self.target_net.load_state_dict(self.q_net.state_dict())
                 if self.last_best_path and self.last_best_path != scored_path \
                         and os.path.exists(self.last_best_path):
                     os.remove(self.last_best_path)
@@ -281,6 +281,7 @@ def get_args():
     # Visualization & Tracking
     parser.add_argument("--log_interval", type=int, default=100)
     parser.add_argument("--max_episode_pieces", type=int, default=100000)
+    parser.add_argument("--max_episode_lines", type=int, default=10000)
     parser.add_argument("--save_interval", type=int, default=100)
     parser.add_argument("--save_path", type=str, default="models")
     parser.add_argument("--render", action="store_true")

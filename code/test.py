@@ -1,14 +1,5 @@
 """
-STEP 5: TEST & EVALUATE TRAINED MODEL
-======================================
-Test trained DQN model on Tetris
-
-Usage:
-    python test.py --model_path models/tetris_final.pth              # 10 games + stats
-    python test.py --model_path models/tetris_final.pth --num_games 50
-    python test.py --model_path models/tetris_final.pth --infinite   # Infinite mode
-    python test.py --model_path models/tetris_final.pth --infinite --speed 1.5
-    python test.py --model_path models/tetris_final.pth --infinite --harddrop  # Tắt animation rơi
+    python test.py --model_path models/tetris_best_1000.pth --infinite 
 """
 
 import argparse
@@ -19,8 +10,6 @@ from copy import deepcopy
 from tetris import TetrisGame
 from network import DeepQNetwork
 
-# tetris.py có thể có hoặc không hỗ trợ callback soft drop (on_drop_step);
-# check signature để test.py chạy được với cả hai phiên bản
 SOFT_DROP_SUPPORTED = "on_drop_step" in inspect.signature(TetrisGame.step).parameters
 
 
@@ -126,7 +115,7 @@ class DQNTester:
         font = pygame.font.Font(None, 24)
         info_x = env.width * block_sz + 10
         info = [f"Score: {env.score}", f"Pieces: {env.tetrominoes}", f"Lines: {env.cleared_lines}",
-                "", f"Action: x={action[0]}, r={action[1]}", f"Reward: {reward:+.1f}", f"Q: {q_value:.2f}",
+                "", f"Action: x={action[0]}, r={action[1]}", f"Q: {q_value:.2f}",
                 "", f"Speed: {speed:.1f}x [1-9]", f"Drop: {'soft' if self.soft_drop else 'hard'} [D]"]
         for i, txt in enumerate(info):
             if txt:

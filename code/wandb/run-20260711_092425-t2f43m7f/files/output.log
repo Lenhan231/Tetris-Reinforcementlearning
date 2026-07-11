@@ -1,0 +1,103 @@
+
+======================================================================
+ TRAINING DQN AGENT
+======================================================================
+Device: cpu
+Episodes: 3000
+Batch size: 64
+Learning rate: 0.001
+Gamma: 0.99
+Initial epsilon: 1.0
+Final epsilon: 0.001
+Epsilon decay episodes: 2000.0
+Target update interval: 10
+Replay buffer size: 3000
+Max episode pieces: 5000
+======================================================================
+Ep  100/3000 | Avg_Score: 0.00 | Avg_Pieces: 18.34 | Avg_Lines: 0.00 | Loss: 623.9224 | ε: 0.951
+New best score: 11 | lines cleared: 1 | pieces: 22 | tetris_best_11.pth
+Ep  200/3000 | Avg_Score: 0.22 | Avg_Pieces: 18.25 | Avg_Lines: 0.02 | Loss: 1919.4463 | ε: 0.901
+Ep  300/3000 | Avg_Score: 0.00 | Avg_Pieces: 17.54 | Avg_Lines: 0.00 | Loss: 2378.8231 | ε: 0.851
+Ep  400/3000 | Avg_Score: 0.33 | Avg_Pieces: 17.49 | Avg_Lines: 0.03 | Loss: 2861.8244 | ε: 0.801
+Ep  500/3000 | Avg_Score: 0.00 | Avg_Pieces: 17.36 | Avg_Lines: 0.00 | Loss: 2664.6532 | ε: 0.751
+Ep  600/3000 | Avg_Score: 0.00 | Avg_Pieces: 17.04 | Avg_Lines: 0.00 | Loss: 2277.4731 | ε: 0.701
+Ep  700/3000 | Avg_Score: 0.11 | Avg_Pieces: 16.81 | Avg_Lines: 0.01 | Loss: 1929.6736 | ε: 0.651
+Ep  800/3000 | Avg_Score: 0.11 | Avg_Pieces: 17.39 | Avg_Lines: 0.01 | Loss: 1880.5145 | ε: 0.601
+Ep  900/3000 | Avg_Score: 0.11 | Avg_Pieces: 18.21 | Avg_Lines: 0.01 | Loss: 1466.3832 | ε: 0.551
+Ep 1000/3000 | Avg_Score: 0.11 | Avg_Pieces: 18.82 | Avg_Lines: 0.01 | Loss: 1191.8662 | ε: 0.501
+New best score: 41 | lines cleared: 2 | pieces: 35 | tetris_best_41.pth
+Ep 1100/3000 | Avg_Score: 0.96 | Avg_Pieces: 21.66 | Avg_Lines: 0.07 | Loss: 932.0834 | ε: 0.451
+Ep 1200/3000 | Avg_Score: 1.95 | Avg_Pieces: 23.48 | Avg_Lines: 0.16 | Loss: 743.7477 | ε: 0.401
+New best score: 52 | lines cleared: 3 | pieces: 39 | tetris_best_52.pth
+Ep 1300/3000 | Avg_Score: 1.40 | Avg_Pieces: 21.71 | Avg_Lines: 0.11 | Loss: 702.6444 | ε: 0.351
+New best score: 96 | lines cleared: 7 | pieces: 48 | tetris_best_96.pth
+New best score: 206 | lines cleared: 17 | pieces: 72 | tetris_best_206.pth
+Ep 1400/3000 | Avg_Score: 12.94 | Avg_Pieces: 26.95 | Avg_Lines: 1.09 | Loss: 499.3699 | ε: 0.301
+Ep 1500/3000 | Avg_Score: 16.53 | Avg_Pieces: 29.96 | Avg_Lines: 1.19 | Loss: 338.6206 | ε: 0.251
+New best score: 316 | lines cleared: 20 | pieces: 88 | tetris_best_316.pth
+Ep 1600/3000 | Avg_Score: 6.54 | Avg_Pieces: 21.62 | Avg_Lines: 0.49 | Loss: 494.2611 | ε: 0.201
+New best score: 346 | lines cleared: 21 | pieces: 90 | tetris_best_346.pth
+Ep 1700/3000 | Avg_Score: 37.21 | Avg_Pieces: 36.93 | Avg_Lines: 2.74 | Loss: 541.7428 | ε: 0.151
+New best score: 638 | lines cleared: 44 | pieces: 145 | tetris_best_638.pth
+New best score: 683 | lines cleared: 50 | pieces: 161 | tetris_best_683.pth
+New best score: 731 | lines cleared: 56 | pieces: 180 | tetris_best_731.pth
+Ep 1800/3000 | Avg_Score: 100.39 | Avg_Pieces: 49.89 | Avg_Lines: 7.42 | Loss: 419.7581 | ε: 0.101
+New best score: 740 | lines cleared: 48 | pieces: 155 | tetris_best_740.pth
+New best score: 1060 | lines cleared: 72 | pieces: 214 | tetris_best_1060.pth
+New best score: 1198 | lines cleared: 88 | pieces: 256 | tetris_best_1198.pth
+Ep 1900/3000 | Avg_Score: 208.22 | Avg_Pieces: 69.20 | Avg_Lines: 15.32 | Loss: 260.4665 | ε: 0.051
+New best score: 2617 | lines cleared: 186 | pieces: 502 | tetris_best_2617.pth
+New best score: 2661 | lines cleared: 195 | pieces: 523 | tetris_best_2661.pth
+New best score: 3797 | lines cleared: 209 | pieces: 554 | tetris_best_3797.pth
+New best score: 4082 | lines cleared: 224 | pieces: 597 | tetris_best_4082.pth
+Ep 2000/3000 | Avg_Score: 572.76 | Avg_Pieces: 124.89 | Avg_Lines: 36.76 | Loss: 236.8109 | ε: 0.001
+Ep 2100/3000 | Avg_Score: 390.27 | Avg_Pieces: 86.35 | Avg_Lines: 21.59 | Loss: 389.5032 | ε: 0.001
+New best score: 5479 | lines cleared: 290 | pieces: 758 | tetris_best_5479.pth
+New best score: 9168 | lines cleared: 496 | pieces: 1268 | tetris_best_9168.pth
+New best score: 10688 | lines cleared: 565 | pieces: 1445 | tetris_best_10688.pth
+New best score: 16823 | lines cleared: 936 | pieces: 2369 | tetris_best_16823.pth
+Ep 2200/3000 | Avg_Score: 1002.95 | Avg_Pieces: 167.11 | Avg_Lines: 54.34 | Loss: 500.0405 | ε: 0.001
+Ep 2300/3000 | Avg_Score: 141.82 | Avg_Pieces: 47.91 | Avg_Lines: 7.59 | Loss: 880.7904 | ε: 0.001
+New best score: 39365 | lines cleared: 1998 | pieces: 5000 | tetris_best_39365.pth
+Ep 2400/3000 | Avg_Score: 3706.42 | Avg_Pieces: 524.22 | Avg_Lines: 195.71 | Loss: 690.0700 | ε: 0.001
+Ep 2500/3000 | Avg_Score: 1751.92 | Avg_Pieces: 256.89 | Avg_Lines: 89.76 | Loss: 693.7409 | ε: 0.001
+New best score: 42132 | lines cleared: 1997 | pieces: 5000 | tetris_best_42132.pth
+Ep 2600/3000 | Avg_Score: 4348.61 | Avg_Pieces: 572.56 | Avg_Lines: 215.73 | Loss: 587.6541 | ε: 0.001
+New best score: 43890 | lines cleared: 1998 | pieces: 5000 | tetris_best_43890.pth
+Ep 2700/3000 | Avg_Score: 4055.06 | Avg_Pieces: 534.39 | Avg_Lines: 200.49 | Loss: 723.6712 | ε: 0.001
+Ep 2800/3000 | Avg_Score: 7175.35 | Avg_Pieces: 910.33 | Avg_Lines: 351.14 | Loss: 674.4855 | ε: 0.001
+Traceback (most recent call last):
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 310, in <module>
+    print(f"Max episode pieces: {agent.args.max_episode_pieces}")
+    ^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 193, in train
+    score, pieces, lines, total_reward = self.play_episode()
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 157, in play_episode
+    action = self.select_action()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 93, in select_action
+    return self._get_best_action(self.env.get_next_states())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 84, in _get_best_action
+    q_values = self.q_net(states_tensor).squeeze()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\network.py", line 22, in forward
+    x = F.relu(self.fc1(x))
+               ^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

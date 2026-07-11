@@ -63,3 +63,25 @@ New best score: 47420 | lines cleared: 2852 | pieces: 7145 | tetris_best_47420.p
 New best score: 59147 | lines cleared: 3660 | pieces: 9179 | tetris_best_59147.pth
 New best score: 87520 | lines cleared: 4868 | pieces: 12181 | tetris_best_87520.pth
 Ep 2100/3000 | Avg_Score: 6089.93 | Avg_Pieces: 892.17 | Avg_Lines: 344.11 | Loss: 741.0036 | ε: 0.001
+New best score: 574477 | lines cleared: 32650 | pieces: 81654 | tetris_best_574477.pth
+New best score: 664377 | lines cleared: 39998 | pieces: 100000 | tetris_best_664377.pth
+New best score: 683097 | lines cleared: 39998 | pieces: 100000 | tetris_best_683097.pth
+Traceback (most recent call last):
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 310, in <module>
+    agent.train()
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 193, in train
+    score, pieces, lines, total_reward = self.play_episode()
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 157, in play_episode
+    action = self.select_action()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\train.py", line 93, in select_action
+    return self._get_best_action(self.env.get_next_states())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\tetris.py", line 203, in get_next_states
+    temp_board = [row[:] for row in self.board]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nhanl\OneDrive\Desktop\School\REL301m\tetris_from_scratch\code\tetris.py", line 203, in <listcomp>
+    temp_board = [row[:] for row in self.board]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
